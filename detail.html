@@ -1,29 +1,19 @@
 <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
 
-        <link rel="stylesheet" type="text/css" href="res/styles/material-bootstrap.css">
-        <!--<script type="text/javascript" src="res/scripts/material-bootstrap.min.js"></script>-->
+    <link rel="stylesheet" type="text/css" href="res/styles/material-bootstrap.css">
 
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 
-        <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-        <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-
-
-    <!--<link href="https://cdn.rawgit.com/band-x-media/SASS-Material-Design-for-Bootstrap/master/dist/material-bootstrap.min.css" rel="stylesheet">-->
-
-    <script type="text/javascript"
-    src="https://cdn.rawgit.com/band-x-media/SASS-Material-Design-for-Bootstrap/master/dist/material-bootstrap.min.js"></script>
-
+    <script type="text/javascript" src="https://cdn.rawgit.com/band-x-media/SASS-Material-Design-for-Bootstrap/master/dist/material-bootstrap.min.js"></script>
 
     <script src="res/scripts/map.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAbD4DRMpWG4WEMKU4VVeyLEPWV_DBLvKY&callback=initMap" async defer
-            type="text/javascript"></script>
-
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAbD4DRMpWG4WEMKU4VVeyLEPWV_DBLvKY&callback=initMap" async defer type="text/javascript"></script>
     <script>
         $(document).ready(function () {
-
             var overlay = $('.sidebar-overlay');
 
             $('body').removeAttr('style');
@@ -62,12 +52,12 @@
 
             var dropdown = $('.sidebar .dropdown');
 
-//	Add slidedown animation to dropdown
+            //	Add slidedown animation to dropdown
             dropdown.on('show.bs.dropdown', function (e) {
                 $(this).find('.dropdown-menu').first().stop(true, true).slideDown();
             });
 
-//	Add slideup animation to dropdown
+            //	Add slideup animation to dropdown
             dropdown.on('hide.bs.dropdown', function (e) {
                 $(this).find('.dropdown-menu').first().stop(true, true).slideUp();
             });
@@ -77,78 +67,18 @@
 
     <style>
         #map {
-            height: 100%;
+            margin-top: 2em;
             width: 100%;
+            height: 150px;
         }
 
         .breather-sml{
             height:5px;
         }
-    </style>
 
-    <title></title>
-
-
-    <script>
-        $(document).ready(function () {
-
-            var overlay = $('.sidebar-overlay');
-
-            $('.sidebar-toggle').on('click', function () {
-                var sidebar = $('#sidebar');
-                sidebar.toggleClass('open');
-                if ((sidebar.hasClass('sidebar-fixed-left') || sidebar.hasClass('sidebar-fixed-right')) && sidebar.hasClass('open')) {
-                    overlay.addClass('active');
-                } else {
-                    overlay.removeClass('active');
-                }
-            });
-
-            overlay.on('click', function () {
-                $(this).removeClass('active');
-                $('#sidebar').removeClass('open');
-            });
-
-            $("#maps").hide();
-
-            $("#home-tab").click(function(){
-                $("#maps").hide();
-                $("#home").show();
-            });
-            $("#maps-tab").click(function(){
-                $("#maps").show();
-                $("#home").hide();
-            });
-
-        });
-
-
-        (function ($) {
-
-            var dropdown = $('.sidebar .dropdown');
-
-//	Add slidedown animation to dropdown
-            dropdown.on('show.bs.dropdown', function (e) {
-                $(this).find('.dropdown-menu').first().stop(true, true).slideDown();
-            });
-
-//	Add slideup animation to dropdown
-            dropdown.on('hide.bs.dropdown', function (e) {
-                $(this).find('.dropdown-menu').first().stop(true, true).slideUp();
-            });
-
-        })(jQuery);
-    </script>
-
-
-    <style>
-        #map {
-            height: 500px;
-            width: 500px;
-        }
-
-        .breather-sml{
-            height:5px;
+        .coupon {
+            border: 2px dashed #202020;
+            background-color: rgba(255, 255, 255, .92);
         }
     </style>
 
@@ -164,8 +94,7 @@
 
     <a class="navigation-drawer-toggle" href="#">
 
-        <!--<span class="glyphicon glyphicon-chevron-left"></span>-->
-        <!--<i class="icon icon-lg material-icons text-white">menu</i>-->
+        <span class="glyphicon glyphicon-chevron-left"></span>
 
     </a>
 
@@ -177,13 +106,10 @@
     </a>
 
     <h1 class="title">
-
 		<span class="hidden-sm hidden-xs">
 				components <span class="divider">❯</span>
 		</span>
-
         Unchained
-
     </h1>
 </nav>
 
@@ -198,55 +124,31 @@
                         <div class="carousel-caption">
                             <h1>Brunch</h1>
                             <!--Insert your text here !-->
-                            <div class="paper elevated-4">
+                            <div class="paper elevated-1 coupon">
                                 <strong>
-                                    <h1 style="color: #00BCD4 ">COUPON-1</h1>
+                                    <h1 style="color: #00BCD4">COUPON-1</h1>
                                 </strong>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
 
         <div class="row">
             <div class="card paper">
-<!--
-                <div class="tile background-image tile-md background-top top">
-                    <div class="margin">
-                        <div class="tile-bottom">
-                            Combined with Tile
-                        </div>
-                    </div>
-                </div>-->
                 <div class="title">
                     Vendor detail<br>
                     <small>123 E 4th Street; New York NY 10008</small>
                 </div>
                 <div class="content">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <p>Grotta Azzurra is a neighborhood institution with traditional Italian fare in a white tablecloth setting.</p>
                 </div>
-<!--                <div class="action-area clearfix">
-						<span class="pull-right">
-							<a class="btn btn-default btn-icon btn-no-style">
-                                <i class="icon icon-lg material-icons">expand_less</i>
-                            </a>
-						</span>
-                </div>-->
+
+                <div id="maps" class="row">
+                    <div id="map"></div>
+                </div>
             </div>
-        </div>
-
-        <!--<div class="row">-->
-            <!--<div class="breather-sml"></div>-->
-            <!--<div class="paper elevated-4">-->
-                <!--<h1>COUPON-1</h1>-->
-            <!--</div>-->
-        <!--</div>-->
-
-        <div id="maps" class="row">
-            <div id="map"></div>
         </div>
     </div>
 </div>
