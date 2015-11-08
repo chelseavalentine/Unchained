@@ -109,25 +109,16 @@ A detailed view of a coupon
     </a>
 
     <h1 class="title">
-
-		<span class="hidden-sm hidden-xs">
-				components <span class="divider">❯</span>
-		</span>
-
-        Unchained
-
+		Store name
     </h1>
 
     <div class="container">
-
         <div class="row">
             <!--nav-justified-->
             <ul class="nav nav-tabs  nav-tab-yellow" role="tablist">
-                <li role="presentation" class="active"><a  id="home-tab" class="border-green" href="#" aria-controls="home"
-                                                          role="tab" data-toggle="tab" aria-expanded="true"><i class="icon material-icons">home</i></a>
+                <li role="presentation" class="active"><a  id="home-tab" class="border-green" href="#" aria-controls="home" role="tab" data-toggle="tab" aria-expanded="true"><i class="icon material-icons">home</i></a>
                 </li>
-                <li role="presentation" class=""><a id="maps-tab" href="#" aria-controls="profile" role="tab" data-toggle="tab"
-                                                    aria-expanded="false">Tab 2</a></li>
+                <li role="presentation" class=""><a id="maps-tab" href="#" aria-controls="profile" role="tab" data-toggle="tab" aria-expanded="false">Tab 2</a></li>
             </ul>
         </div>
     </div>
@@ -136,37 +127,32 @@ A detailed view of a coupon
 
 <div class="content-container">
     <div class="container">
+    	<!--Map view-->
         <div id="maps" class="row">
             <div id="map"></div>
-            <button>
-        </div>
-    </div>
-</div>
-
-	<main>
-		<!--Map view-->
-		<section>
 			<!--Check button to say you want to use this coupon-->
-			<button>Check</button>
-			<!--Map-->
-			<div class="coupon-map"></div>
-			<div class="coupon-vendor"></div>
+            <button><img src="res/images/checkmark.svg"></button>
+            <div class="address">
+            	<b>Vendor detail</b><br>
+            	123 E 4th Street; New York NY 10008
+            </div>
+        </div>
+
+        <!--Coupon deal-->
+        <section class="coupon-details">
 		</section>
-		
-		<!--Coupon-->
-		<section class="coupon-detail">
-		</section>
-		
-		<!--More about vendor-->
-		<section class="about-vendor">
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+
+        <section>
+        	<h2>About __________</h2>
+        	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-		</section>
-	</main>
+        </section>
+    </div>
+</div>
 
 <script type="text/javascript" src="https://cdn.rawgit.com/Prinzhorn/skrollr/master/dist/skrollr.min.js"></script>
 <!--<script type="text/javascript"-->
