@@ -56,7 +56,9 @@
   align-items: center;
 
   h3 {
-    margin: 1em auto 0 auto;
+    position: relative;
+    margin: 0 auto;
+    width: 80%;
     border-bottom: 1px solid $grey200;
   }
 }
@@ -65,7 +67,7 @@
   display: block;
   width: 70%;
   margin: 0 auto;
-  padding: 0 3em;
+  padding: 2em 3em 2em 0;
 }
 
 .button-holder {
