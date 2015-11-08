@@ -1,11 +1,54 @@
-.interests {
-	max-width: 600px;
-	width: 50%;
-	overflow: hidden;
+.interest {
+	display: flex;
+	margin: 0 auto;
+	width: 80%;
+	border: 1px solid $grey100;
+	border-radius: .5em;
 
-	option {
-		padding: 2em;
-		background-color: $cyan200;
+	&+.interest {
+		margin-top: .4em;
+	}
+
+	h4 {
+		display: inline-block;
+		padding: .5em;
+	}
+
+
+	div {
+		display: inline-block;
+		margin-left: auto;
+		margin: 1.5em .6em 1.2em auto;
+	}
+}
+
+#interest-food {
+	&:hover, &:active, &[toggled="true"] {
+		border: 1px solid $pink200;
+	}
+}
+
+#interest-entertainment {
+	&:hover, &:active, &[toggled="true"] {
+		border: 1px solid $cyan300;
+	}
+}
+
+#interest-clothing {
+	&:hover, &:active, &[toggled="true"] {
+		border: 1px solid $orange400;
+	}
+}
+
+#interest-souvenirs {
+	&:hover, &:active, &[toggled="true"] {
+		border: 1px solid $lightgreen400;
+	}
+}
+
+#interest-surprise {
+	&:hover, &:active, &[toggled="true"] {
+		border: 1px solid $yellow500;
 	}
 }
 
@@ -13,4 +56,15 @@
 	h4 {
 		display: inline-block;
 	}
+}
+
+.card {
+	position: relative;
+	width: 80%;
+	margin: 0 auto;
+}
+
+#filter-interest {
+	position: relative;
+	margin-left: auto;
 }

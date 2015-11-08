@@ -2,58 +2,81 @@
 Sign up
 -->
 <!DOCTYPE html>
-<html>
+<html lang="en" class="skrollr skrollr-desktop">
 <head>
-	<title>Unchained</title>
-	
-	<!-- Latest compiled and minified CSS -->
+    <meta charset="UTF-8">
+    <link href="https://cdn.rawgit.com/band-x-media/SASS-Material-Design-for-Bootstrap/master/dist/material-bootstrap.min.css" rel="stylesheet">
+
+    <!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
 
 	<!-- Optional theme -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous">
-
-	<link rel="stylesheet" href="./res/styles/style.css">
-
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.rawgit.com/band-x-media/SASS-Material-Design-for-Bootstrap/master/dist/material-bootstrap.min.js"></script>
+
+    <script src="./res/scripts/main.js"></script>
+    <link rel="stylesheet" href="./res/styles/style.css">
+
+    <title></title>
 </head>
+
 <body>
+<nav class="app-bar elevated-1 app-bar-static app-bar-translucent bg-cyan">
+    <h1 class="title">Unchained</h1>
+</nav>
 
-<nav><a href="./">Unchained</a></nav>
 <main>
-	<!--Interest selection-->
-	<section>
-		<h4>I'm interested in...</h4><br>
+	<div class="card paper">
+		<div class="content">
+			<h4>I'm interested in...</h4><br>
+			<div class="interest" id="interest-food" toggled="true">
+				<h4>Food</h4>
+				<div class="switch switch-pink">
+					<input type="checkbox" name="switch1Value" id="switch1" checked>
+				</div>
+			</div>
 
-		<div class="switch switch-pink">
-			<input type="checkbox" name="switch2Value" id="switch2" checked>
-			<h4>Food</h4>
-		</div>
+			<div class="interest" id="interest-entertainment">
+				<h4>Entertainment</h4>
+				<div class="switch switch-cyan">
+					<input type="checkbox" name="switch2Value" id="switch2">
+				</div>
+			</div>
 
-		<div class="switch switch-blue">
-			<input type="checkbox" name="switch2Value" id="switch2" checked>
-			<h4>Entertainment</h4>
-		</div>
+			<div class="interest" id="interest-clothing">
+				<h4>Clothing</h4>
+				<div class="switch switch-orange">
+					<input type="checkbox" name="switch3Value" id="switch3">
+				</div>
+			</div>
+			
+			<div class="interest" id="interest-souvenirs">
+				<h4>Souvenirs</h4>
+				<div class="switch switch-light-green">
+					<input type="checkbox" name="switch4Value" id="switch4">
+				</div>
+			</div>
+			
+			<div class="interest" id="interest-surprise">
+				<h4>Surprise me!</h4>
+				<div class="switch switch-yellow">
+					<input type="checkbox" name="switch5Value" id="switch5">
+				</div>
+			</div>
+			<br>
 
-		<div class="switch switch-green">
-			<input type="checkbox" name="switch2Value" id="switch2" checked>
-			<h4>Clothing</h4>
+			<a role="button" class="btn btn-primary" id="interest-filter">Filter</a>
 		</div>
-
-		<div class="switch switch-yellow">
-			<input type="checkbox" name="switch2Value" id="switch2" checked>
-			<h4>Souvenirs</h4>
-		</div>
-
-		<div class="switch switch-pink">
-			<input type="checkbox" name="switch2Value" id="switch2" checked>
-			<h4>Surprise me!</h4>
-		</div>
-	</section>
+	</div>
 </main>
 
-<script src="./res/scripts/main.js"></script>
+<script type="text/javascript" src="https://cdn.rawgit.com/Prinzhorn/skrollr/master/dist/skrollr.min.js"></script>
+<script type="text/javascript"
+        src="https://cdn.rawgit.com/liabru/jquery-match-height/master/jquery.matchHeight-min.js"></script>
+<script src="./res/scripts/interests.js"></script>
 
 </body>
 </html>
