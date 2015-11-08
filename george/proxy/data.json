@@ -1,0 +1,28 @@
+[
+	{
+	"CleansedMerchantName": "Grotta Azzurra",
+	"CleansedMerchantStreetAddress": "177 Mulberry St",
+	"CleansedMerchantTelephoneNumber": "(212) 925-8775",
+	"HiddenGem": true
+	},
+	{
+	"CleansedMerchantName": "Hudson Cafe",
+	"CleansedMerchantStreetAddress": "205 Hudson St",
+	"CleansedMerchantTelephoneNumber": "(480) 226-2578",
+	"HiddenGem": true
+	},
+	{
+	"CleansedMerchantName": "Artisanal Desserts",
+	"CleansedMerchantStreetAddress": "126 Mulberry St",
+	"CleansedMerchantTelephoneNumber": "(480) 292-5100",
+	"HiddenGem": true
+	},
+	{
+	"CleansedMerchantName": "Halal Guys",
+	"CleansedMerchantStreetAddress": "307 E 14th St",
+	"CleansedMerchantTelephoneNumber": "(212) 533-7707",
+	"HiddenGem": false
+	}
+]
+
+
