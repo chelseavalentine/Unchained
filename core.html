@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en" class="skrollr skrollr-desktop">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.rawgit.com/band-x-media/SASS-Material-Design-for-Bootstrap/master/dist/material-bootstrap.min.css"
+          rel="stylesheet">
+    <script type="text/javascript"
+            src="https://cdn.rawgit.com/band-x-media/SASS-Material-Design-for-Bootstrap/master/dist/material-bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            var overlay = $('.sidebar-overlay');
+
+            $('.sidebar-toggle').on('click', function () {
+                var sidebar = $('#sidebar');
+                sidebar.toggleClass('open');
+                if ((sidebar.hasClass('sidebar-fixed-left') || sidebar.hasClass('sidebar-fixed-right')) && sidebar.hasClass('open')) {
+                    overlay.addClass('active');
+                } else {
+                    overlay.removeClass('active');
+                }
+            });
+
+            overlay.on('click', function () {
+                $(this).removeClass('active');
+                $('#sidebar').removeClass('open');
+            });
+
+        });
+
+
+        (function ($) {
+
+            var dropdown = $('.sidebar .dropdown');
+
+//	Add slidedown animation to dropdown
+            dropdown.on('show.bs.dropdown', function (e) {
+                $(this).find('.dropdown-menu').first().stop(true, true).slideDown();
+            });
+
+//	Add slideup animation to dropdown
+            dropdown.on('hide.bs.dropdown', function (e) {
+                $(this).find('.dropdown-menu').first().stop(true, true).slideUp();
+            });
+
+        })(jQuery);
+    </script>
+
+    <title></title>
+
+</head>
+
+<body class="" style="padding-top: 171px; height: 2195px;">
+
+
+<div class="navigation-drawer-overlay"></div>
+
+<aside id="navigation-drawer"
+       class="navigation-drawer navigation-drawer-default navigation-drawer-fixed-left navigation-drawer-fixedleft"
+       role="navigation">
+
+    <div class="wrapper">
+
+        <div class="navigation-drawer-brand">
+
+            <h4>Profile</h4>
+
+        </div>
+
+        <div class="navigation-drawer-divider"></div>
+
+        <nav class="navigation-drawer-nav">
+
+            <ul class="list-level-1">
+
+                <li>
+                    <!--<a href="/SASS-Material-Design-for-Bootstrap/">-->
+                        <!--Profile-->
+                    <!--</a>-->
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="panel-heading">
+                                <img src="res/images/user_avatar.png" alt="" class="img-circle "height="100" width="100"/><br/>
+                                <h3 class="profile-title">Investor Joe</h3>
+                                <p class="profile-info">Type of Investor</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div></div>
+                </li>
+                <li role="presentation" class="">
+
+                    <a href="#" class="toggle-navigation">
+                        Preferences
+                        <i class="icon material-icons">expand_more</i>
+                    </a>
+                    <ul class="list-level-2">
+                        <li role="presentation" class="">
+
+                            <a href="#">
+                                Item 1
+                            </a>
+
+                        </li>
+
+                        <li role="presentation" class="">
+
+                            <a href="#">
+                                Item 2
+                            </a>
+
+                        </li>
+
+                    </ul>
+                </li>
+
+                <li role="presentation" class="">
+
+                    <a href="#" class="toggle-navigation">
+                        History
+                        <i class="icon material-icons">expand_more</i>
+                    </a>
+
+                    <ul class="list-level-2">
+
+
+                        <li role="presentation" class="">
+
+                            <a href="#">
+                                Authentic Motion
+                            </a>
+
+                        </li>
+
+
+                        <li role="presentation" class="">
+
+                            <a href="#">
+                                Smooth Scrolling
+                            </a>
+
+                        </li>
+
+
+                    </ul>
+
+                </li>
+
+            </ul>
+
+        </nav>
+
+        <div class="navigation-drawer-footer">
+
+            <p>
+
+                <a href="#" target="_blank">
+                    Privacy Policy
+                </a>
+            </p>
+            <p>
+                <a href="#" target="_blank">
+                    Terms of Service
+                </a>
+            </p>
+
+        </div>
+
+    </div>
+
+</aside>
+
+
+<nav class="app-bar  app-bar-has-tabs  elevated-1 app-bar-static app-bar-translucent bg-cyan">
+
+
+    <a class="navigation-drawer-toggle" href="#">
+
+        <i class="icon icon-lg material-icons text-white">menu</i>
+
+    </a>
+
+    <h1 class="title">
+
+		<span class="hidden-sm hidden-xs">
+				components <span class="divider">❯</span>
+		</span>
+
+        Unchained
+
+    </h1>
+
+    <div class="container">
+
+        <div class="row">
+            <!--nav-justified-->
+            <ul class="nav nav-tabs  nav-tab-yellow" role="tablist">
+                <li role="presentation" class="active"><a class="border-green" href="#tab1" aria-controls="home"
+                                                          role="tab" data-toggle="tab" aria-expanded="true"><i class="icon material-icons">home</i></a>
+                </li>
+                <li role="presentation" class=""><a href="#tab2" aria-controls="profile" role="tab" data-toggle="tab"
+                                                    aria-expanded="false">Tab 2</a></li>
+                <!--<li role="presentation" class=""><a href="#tab3" aria-controls="messages" role="tab" data-toggle="tab"-->
+                                                    <!--aria-expanded="false">Tab 3</a></li>-->
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+<div class="content-container">
+
+    <div class="container">
+
+        <div class="row">
+
+        </div>
+    </div>
+
+</div>
+<script type="text/javascript" src="https://cdn.rawgit.com/Prinzhorn/skrollr/master/dist/skrollr.min.js"></script>
+<script type="text/javascript"
+        src="https://raw.githubusercontent.com/liabru/jquery-match-height/master/jquery.matchHeight-min.js"></script>
+</body>
+
+</html>
