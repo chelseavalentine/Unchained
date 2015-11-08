@@ -17,6 +17,22 @@
         $(document).ready(function () {
             var overlay = $('.sidebar-overlay');
 
+            var checkout = false;
+            $('#checkout-button').on('click', function() {
+
+                if(checkout === false){
+                    $(this).removeClass('bg-orange').addClass('btn-success');
+                    $('#checkout-button-icon').removeClass('glyphicon-ok').addClass('glyphicon-usd');
+                    $('#coupon-id').append(" RESERVED").addClass('text-success');
+                    $('#coupon-caption-container').fadeTo( "slow", 0.6 );
+
+                    checkout = true;
+                }
+                else {
+
+                }
+            });
+
             $('body').removeAttr('style');
 
             $('.sidebar-toggle').on('click', function () {
@@ -72,28 +88,31 @@
         <span class="glyphicon glyphicon-chevron-left" backButton></span>
     </a>
 
-    <a class="btn btn-fab btn-md bg-orange">
+    <a id="checkout-button" class="btn btn-fab btn-md bg-orange">
         <!--<i class="icon mdi-content-add"></i>-->
         <!--<i class="mdi-content-add"></i>-->
         <!--<i class="glyphicon glyphicon-ok"></i>-->
-        <span class="glyphicon glyphicon-ok"></span>
+        <span id="checkout-button-icon" class="glyphicon glyphicon-ok"></span>
     </a>
 
     <h1 class="title">Grotta Azzurra</h1>
 </nav>
 
+
+<div class="content-container">
+    <div class="container">
         <div id="home" class="row">
             <div id="mycarousel" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
                     <div class="item active">
                         <img src="res/images/food/brunch_spread.jpg" alt="" class="img-responsive">
-                        <div class="carousel-caption">
+                        <div id="coupon-caption-container" class="carousel-caption">
                             <h1>Brunch</h1>
                             <!--Insert your text here !-->
                             <div class="paper elevated-1 coupon">
                                 <p>Only <s>$30</s> $25 for a hearty brunch for 2!</p>
                                 <strong>
-                                    <h1 style="color: #202020">SXFP-CHYK</h1>
+                                    <h1 id="coupon-id" style="color: #202020">SXFP-CHYK</h1>
                                 </strong>
                             </div>
                         </div>
@@ -117,7 +136,8 @@
                 </div>
             </div>
         </div>
-
+    </div>
+</div>
 <script type="text/javascript" src="https://cdn.rawgit.com/Prinzhorn/skrollr/master/dist/skrollr.min.js"></script>
 <!--<script type="text/javascript"-->
         <!--src="https://raw.githubusercontent.com/liabru/jquery-match-height/master/jquery.matchHeight-min.js"></script>-->
