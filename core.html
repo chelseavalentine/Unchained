@@ -26,6 +26,8 @@
 
             var overlay = $('.sidebar-overlay');
 
+            $('body').removeAttr('style');
+
             $('.sidebar-toggle').on('click', function () {
                 var sidebar = $('#sidebar');
                 sidebar.toggleClass('open');
@@ -162,9 +164,11 @@
 
 </head>
 
-<body class="" style=" height: 2195px;">
+<body>
 
-
+<style type='text/css'>
+    body {padding-top: 112px;}
+</style>
 <div class="navigation-drawer-overlay"></div>
 
 <aside id="navigation-drawer"
@@ -401,8 +405,8 @@
 
 </div>
 <script type="text/javascript" src="https://cdn.rawgit.com/Prinzhorn/skrollr/master/dist/skrollr.min.js"></script>
-<script type="text/javascript"
-        src="https://raw.githubusercontent.com/liabru/jquery-match-height/master/jquery.matchHeight-min.js"></script>
+<!--<script type="text/javascript"-->
+        <!--src="https://raw.githubusercontent.com/liabru/jquery-match-height/master/jquery.matchHeight-min.js"></script>-->
 </body>
 
 </html>
