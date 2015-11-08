@@ -1,34 +1,98 @@
 <!DOCTYPE html>
-<html lang="en" class="skrollr skrollr-desktop">
-<head>
-    <meta charset="UTF-8">
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+
+        <!--<link rel="stylesheet" type="text/css" href="res/styles/material-bootstrap.css">-->
+        <!--<script type="text/javascript" src="res/scripts/material-bootstrap.min.js"></script>-->
+
+
+        <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+        <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
 
     <link href="https://cdn.rawgit.com/band-x-media/SASS-Material-Design-for-Bootstrap/master/dist/material-bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="./res/styles/style.css">
 
-    <script type="text/javascript" src="https://rawgit.com/band-x-media/SASS-Material-Design-for-Bootstrap/master/dist/material-bootstrap.min.js"></script>
-    <link href="https://cdn.rawgit.com/band-x-media/SASS-Material-Design-for-Bootstrap/master/dist/material-bootstrap.min.css" rel="stylesheet">
-    <!--<link href="https://cdn.rawgit.com/band-x-media/SASS-Material-Design-for-Bootstrap/master/dist/material-bootstrap.min.css"-->
-          <!--rel="stylesheet">-->
+    <script type="text/javascript"
+    src="https://cdn.rawgit.com/band-x-media/SASS-Material-Design-for-Bootstrap/master/dist/material-bootstrap.min.js"></script>
 
-    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>-->
-
-    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 
     <script src="res/scripts/map.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAbD4DRMpWG4WEMKU4VVeyLEPWV_DBLvKY&callback=initMap" async defer
+            type="text/javascript"></script>
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAbD4DRMpWG4WEMKU4VVeyLEPWV_DBLvKY&callback=initMap" async defer type="text/javascript"></script>
+    <script>
+        $(document).ready(function () {
 
-    <script type="text/javascript" src="https://cdn.rawgit.com/band-x-media/SASS-Material-Design-for-Bootstrap/master/dist/material-bootstrap.min.js"></script>
-    <script src="./res/scripts/main.js"></script>
+            var overlay = $('.sidebar-overlay');
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAbD4DRMpWG4WEMKU4VVeyLEPWV_DBLvKY&callback=initMap" async defer type="text/javascript"></script>
+            $('body').removeAttr('style');
 
-    <!--<script type="text/javascript"-->
-    <!--src="https://cdn.rawgit.com/band-x-media/SASS-Material-Design-for-Bootstrap/master/dist/material-bootstrap.min.js"></script>-->
+            $('.sidebar-toggle').on('click', function () {
+                var sidebar = $('#sidebar');
+                sidebar.toggleClass('open');
+                if ((sidebar.hasClass('sidebar-fixed-left') || sidebar.hasClass('sidebar-fixed-right')) && sidebar.hasClass('open')) {
+                    overlay.addClass('active');
+                } else {
+                    overlay.removeClass('active');
+                }
+            });
 
-    <scrip type="text/javascript" src="res/scripts/material-bootstrap.min.js"></scrip>
+            overlay.on('click', function () {
+                $(this).removeClass('active');
+                $('#sidebar').removeClass('open');
+            });
+
+            $("#maps").hide();
+
+            $("#home-tab").click(function(){
+                $("#maps").hide();
+                $("#home").show();
+            });
+            $("#maps-tab").click(function(){
+                $("#maps").show();
+                $("#home").hide();
+                google.maps.event.trigger(map, 'resize');
+            });
+
+        });
+
+
+        (function ($) {
+
+            var dropdown = $('.sidebar .dropdown');
+
+//	Add slidedown animation to dropdown
+            dropdown.on('show.bs.dropdown', function (e) {
+                $(this).find('.dropdown-menu').first().stop(true, true).slideDown();
+            });
+
+//	Add slideup animation to dropdown
+            dropdown.on('hide.bs.dropdown', function (e) {
+                $(this).find('.dropdown-menu').first().stop(true, true).slideUp();
+            });
+
+        })(jQuery);
+    </script>
+
+    <style>
+        #map {
+            height: 500px;
+            width: 500px;
+        }
+
+        .breather-sml{
+            height:5px;
+        }
+
+        body {
+            padding-top: 112px;
+        }
+    </style>
+
+    <title></title>
+
+
     <script>
         $(document).ready(function () {
 
@@ -80,7 +144,6 @@
         })(jQuery);
     </script>
 
-    <link rel="stylesheet" type="text/css" href="res/styles/material-bootstrap.css">
 
     <style>
         #map {
@@ -103,7 +166,9 @@
 
 <body>
 
-
+<style type='text/css'>
+    body {padding-top: 112px;}
+</style>
 <div class="navigation-drawer-overlay"></div>
 
 <aside id="navigation-drawer"
@@ -111,44 +176,114 @@
        role="navigation">
 
     <div class="wrapper">
+
         <div class="navigation-drawer-brand">
-            <h4>Unchained</h4>
+
+            <h4>Profile</h4>
+
         </div>
+
         <div class="navigation-drawer-divider"></div>
+
         <nav class="navigation-drawer-nav">
+
             <ul class="list-level-1">
+
                 <li>
+                    <!--<a href="/SASS-Material-Design-for-Bootstrap/">-->
+                        <!--Profile-->
+                    <!--</a>-->
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="panel-heading">
-                                <img src="res/images/user_avatar.png" alt="" class="img-circle "height="100" width="100"/>
-                                <h3 class="profile-title">Jill</h3>
+                                <img src="res/images/user_avatar.png" alt="" class="img-circle "height="100" width="100"/><br/>
+                                <h3 class="profile-title">Investor Joe</h3>
+                                <p class="profile-info">Type of Investor</p>
                             </div>
                         </div>
                     </div>
                     <div></div>
                 </li>
                 <li role="presentation" class="">
-                    <a href="./user/profile.html" class="toggle-navigation">
-                        Profile
+
+                    <a href="#" class="toggle-navigation">
+                        Preferences
                         <i class="icon material-icons">expand_more</i>
                     </a>
+                    <ul class="list-level-2">
+                        <li role="presentation" class="">
+
+                            <a href="#">
+                                Item 1
+                            </a>
+
+                        </li>
+
+                        <li role="presentation" class="">
+
+                            <a href="#">
+                                Item 2
+                            </a>
+
+                        </li>
+
+                    </ul>
                 </li>
 
                 <li role="presentation" class="">
-                    <a href="./user/history.html" class="toggle-navigation">
+
+                    <a href="#" class="toggle-navigation">
                         History
                         <i class="icon material-icons">expand_more</i>
                     </a>
+
+                    <ul class="list-level-2">
+
+
+                        <li role="presentation" class="">
+
+                            <a href="#">
+                                Authentic Motion
+                            </a>
+
+                        </li>
+
+
+                        <li role="presentation" class="">
+
+                            <a href="#">
+                                Smooth Scrolling
+                            </a>
+
+                        </li>
+
+
+                    </ul>
+
                 </li>
+
             </ul>
+
         </nav>
 
         <div class="navigation-drawer-footer">
-            <p><a href="#" target="_blank">Privacy Policy</a></p>
-            <p><a href="#" target="_blank">Terms of Service</a></p>
+
+            <p>
+
+                <a href="#" target="_blank">
+                    Privacy Policy
+                </a>
+            </p>
+            <p>
+                <a href="#" target="_blank">
+                    Terms of Service
+                </a>
+            </p>
+
         </div>
+
     </div>
+
 </aside>
 
 
@@ -161,7 +296,15 @@
 
     </a>
 
-    <h1 class="title">Unchained</h1>
+    <h1 class="title">
+
+		<span class="hidden-sm hidden-xs">
+				components <span class="divider">❯</span>
+		</span>
+
+        Unchained
+
+    </h1>
 
     <div class="container">
 
@@ -185,7 +328,7 @@
             <div id="mycarousel" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
                     <div class="item active">
-                        <img src="res/images/signup-food.png" alt="" class="img-responsive">
+                        <img src="res/images/food/brunch_spread.jpg" alt="" class="img-responsive">
                         <div class="carousel-caption">
                             Insert your text here !
                         </div>
@@ -198,7 +341,7 @@
             <div id="mycarousel" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
                     <div class="item active">
-                        <img src="res/images/signup-food.png" alt="" class="img-responsive">
+                        <img src="res/images/food/coffee.jpg" alt="" class="img-responsive">
                         <div class="carousel-caption">
                             Insert your text here !
                         </div>
@@ -211,7 +354,33 @@
             <div id="mycarousel" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
                     <div class="item active">
-                        <img src="res/images/signup-food.png" alt="" class="img-responsive">
+                        <img src="res/images/food/roasted_pork_and_scrambled_egg_burrito_with_some_red_pepper_salsa.jpg" alt="" class="img-responsive">
+                        <div class="carousel-caption">
+                            Insert your text here !
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="breather-sml"></div>
+
+            <div id="mycarousel" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <img src="res/images/food/strawberry_cheesecake.jpg" alt="" class="img-responsive">
+                        <div class="carousel-caption">
+                            Insert your text here !
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="breather-sml"></div>
+
+            <div id="mycarousel" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <img src="res/images/food/halal.jpg" alt="" class="img-responsive">
                         <div class="carousel-caption">
                             Insert your text here !
                         </div>
@@ -226,8 +395,8 @@
     </div>
 </div>
 <script type="text/javascript" src="https://cdn.rawgit.com/Prinzhorn/skrollr/master/dist/skrollr.min.js"></script>
-<script type="text/javascript"
-        src="https://cdn.rawgit.com/liabru/jquery-match-height/master/jquery.matchHeight-min.js"></script>
+<!--<script type="text/javascript"-->
+        <!--src="https://raw.githubusercontent.com/liabru/jquery-match-height/master/jquery.matchHeight-min.js"></script>-->
 </body>
 
 </html>
