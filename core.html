@@ -233,7 +233,7 @@
                     <div class="coupon-top">
                         <img class="diamond" src="./res/images/diamond.svg">
                         <span class="distance">300ft</span>
-                        <span class="time">00:00</span> left
+                        <span class="time" id="time1"></span> left
                         <br>
                         <img class="starred" src="./res/images/star.svg"> 120 people liked this!
                     </div>
@@ -259,7 +259,7 @@
                     <div class="coupon-top">
                         <img class="diamond" src="./res/images/diamond.svg">
                         <span class="distance">350ft</span>
-                        <span class="time">00:00</span> left
+                        <span class="time" id="time2"></span> left
                         <br>
                         <img class="starred" src="./res/images/star.svg"> 97 people liked this!
                     </div>
@@ -283,10 +283,10 @@
                 <div class="carousel-inner">
                     <div class="coupon-top">
                         <img class="diamond" src="./res/images/diamond.svg">
-                        <span class="distance">350ft</span>
-                        <span class="time">00:00</span> left
+                        <span class="distance">450ft</span>
+                        <span class="time" id="time3"></span> left
                         <br>
-                        <img class="starred" src="./res/images/star.svg"> 97 people liked this!
+                        <img class="starred" src="./res/images/star.svg"> 138 people liked this!
                     </div>
                     <a href="coupon3.html">
                     <div class="item active">
@@ -307,10 +307,10 @@
             <div id="mycarousel" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
                     <div class="coupon-top">
-                        <span class="distance">350ft</span>
-                        <span class="time">00:00</span> left
+                        <span class="distance">500ft</span>
+                        <span class="time" id="time4"></span> left
                         <br>
-                        <img class="starred" src="./res/images/star.svg"> 97 people liked this!
+                        <img class="starred" src="./res/images/star.svg"> 68 people liked this!
                     </div>
                     <a href="coupon4.html">
                     <div class="item active">
@@ -331,10 +331,10 @@
             <div id="mycarousel" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
                     <div class="coupon-top">
-                        <span class="distance">350ft</span>
-                        <span class="time">00:00</span> left
+                        <span class="distance">600ft</span>
+                        <span class="time" id="time5"></span> left
                         <br>
-                        <img class="starred" src="./res/images/star.svg"> 97 people liked this!
+                        <img class="starred" src="./res/images/star.svg"> 59 people liked this!
                     </div>
                     <a href="coupon5.html">
                     <div class="item active">
@@ -359,5 +359,24 @@
 <script type="text/javascript" src="https://cdn.rawgit.com/Prinzhorn/skrollr/master/dist/skrollr.min.js"></script>
 <!--<script type="text/javascript"-->
         <!--src="https://raw.githubusercontent.com/liabru/jquery-match-height/master/jquery.matchHeight-min.js"></script>-->
+    <script>
+        (function(){
+            createTimer("time1");
+            createTimer("time2");
+            createTimer("time3");
+            createTimer("time4");
+            createTimer("time5");
+        })();
+
+        function createTimer(timeNum) {
+            var min = Math.floor(Math.random() * 30) + 30,
+                count = min * 60 + Math.floor(Math.random() * 30) + 29,
+                timer = setInterval(function() {
+                    var prevCount = count;
+                    $("#" + timeNum).html(Math.trunc(count--/60) + ":" + (count - Math.trunc(prevCount/60)*60));
+                    if (count == 0) clearInterval (timer);
+                }, 1000);
+        }
+    </script>
 </body>
 </html>
