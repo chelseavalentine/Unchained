@@ -16,35 +16,20 @@ time, mark, audio, video {
   margin: 0;
   outline: 0;
   padding: 0;
-  vertical-align: baseline; }
+  vertical-align: baseline;
+}
 
 /* HTML5 RESETS FOR OLDER BROWSERS */
 article, aside, figure, figure img, hgroup, footer, header, nav, section {
-  display: block; }
+  display: block;
+}
 
 /*ol, ul { list-style: none; }*/
-blockquote, q {
-  quotes: none; }
-
+blockquote, q { quotes: none; }
 blockquote:before, blockquote:after,
-q:before, q:after {
-  content: '';
-  content: none; }
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0; }
-
-input, select {
-  vertical-align: middle; }
-
-a img {
-  border: 0; }
-
-:focus {
-  outline: 0; }
-
-a:hover, a:active {
-  outline: none; }
-
-/*# sourceMappingURL=style.css.map */
+q:before, q:after { content: ''; content: none; }
+table { border-collapse: collapse; border-spacing: 0; }
+input, select { vertical-align: middle; }
+a img { border: 0; }
+:focus { outline: 0; }
+a:hover, a:active { outline: none; }
