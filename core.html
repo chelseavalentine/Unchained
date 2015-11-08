@@ -2,13 +2,12 @@
 <html lang="en" class="skrollr skrollr-desktop">
 <head>
     <meta charset="UTF-8">
-    <link href="https://cdn.rawgit.com/band-x-media/SASS-Material-Design-for-Bootstrap/master/dist/material-bootstrap.min.css"
-          rel="stylesheet">
-    <script type="text/javascript"
-            src="https://cdn.rawgit.com/band-x-media/SASS-Material-Design-for-Bootstrap/master/dist/material-bootstrap.min.js"></script>
+    <link href="https://cdn.rawgit.com/band-x-media/SASS-Material-Design-for-Bootstrap/master/dist/material-bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./res/styles/style.css">
+
+    <script type="text/javascript" src="https://cdn.rawgit.com/band-x-media/SASS-Material-Design-for-Bootstrap/master/dist/material-bootstrap.min.js"></script>
     <script>
         $(document).ready(function () {
-
             var overlay = $('.sidebar-overlay');
 
             $('.sidebar-toggle').on('click', function () {
@@ -25,24 +24,20 @@
                 $(this).removeClass('active');
                 $('#sidebar').removeClass('open');
             });
-
         });
 
-
         (function ($) {
-
             var dropdown = $('.sidebar .dropdown');
 
-//	Add slidedown animation to dropdown
+            //	Add slidedown animation to dropdown
             dropdown.on('show.bs.dropdown', function (e) {
                 $(this).find('.dropdown-menu').first().stop(true, true).slideDown();
             });
 
-//	Add slideup animation to dropdown
+            //	Add slideup animation to dropdown
             dropdown.on('hide.bs.dropdown', function (e) {
                 $(this).find('.dropdown-menu').first().stop(true, true).slideUp();
             });
-
         })(jQuery);
     </script>
 
@@ -60,100 +55,41 @@
        role="navigation">
 
     <div class="wrapper">
-
         <div class="navigation-drawer-brand">
-
-            <h4>Profile</h4>
-
+            <h4>Unchained</h4>
         </div>
-
         <div class="navigation-drawer-divider"></div>
-
         <nav class="navigation-drawer-nav">
-
             <ul class="list-level-1">
-
                 <li>
-                    <!--<a href="/SASS-Material-Design-for-Bootstrap/">-->
-                        <!--Profile-->
-                    <!--</a>-->
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="panel-heading">
-                                <img src="res/images/user_avatar.png" alt="" class="img-circle "height="100" width="100"/><br/>
-                                <h3 class="profile-title">Investor Joe</h3>
-                                <p class="profile-info">Type of Investor</p>
+                                <img src="res/images/user_avatar.png" alt="" class="img-circle "height="100" width="100"/>
+                                <h3 class="profile-title">Jill</h3>
                             </div>
                         </div>
                     </div>
                     <div></div>
                 </li>
                 <li role="presentation" class="">
-
-                    <a href="#" class="toggle-navigation">
-                        Preferences
+                    <a href="./user/profile.html" class="toggle-navigation">
+                        Profile
                         <i class="icon material-icons">expand_more</i>
                     </a>
-                    <ul class="list-level-2">
-                        <li role="presentation" class="">
-
-                            <a href="#">
-                                Item 1
-                            </a>
-
-                        </li>
-
-                        <li role="presentation" class="">
-
-                            <a href="#">
-                                Item 2
-                            </a>
-
-                        </li>
-
-                    </ul>
                 </li>
 
                 <li role="presentation" class="">
-
-                    <a href="#" class="toggle-navigation">
+                    <a href="./user/history.html" class="toggle-navigation">
                         History
                         <i class="icon material-icons">expand_more</i>
                     </a>
-
-                    <ul class="list-level-2">
-
-
-                        <li role="presentation" class="">
-
-                            <a href="#">
-                                Authentic Motion
-                            </a>
-
-                        </li>
-
-
-                        <li role="presentation" class="">
-
-                            <a href="#">
-                                Smooth Scrolling
-                            </a>
-
-                        </li>
-
-
-                    </ul>
-
                 </li>
-
             </ul>
-
         </nav>
 
         <div class="navigation-drawer-footer">
-
             <p>
-
                 <a href="#" target="_blank">
                     Privacy Policy
                 </a>
@@ -163,11 +99,8 @@
                     Terms of Service
                 </a>
             </p>
-
         </div>
-
     </div>
-
 </aside>
 
 
