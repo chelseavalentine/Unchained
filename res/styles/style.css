@@ -47,6 +47,15 @@ a img {
 a:hover, a:active {
   outline: none; }
 
+nav {
+  background-color: #212121;
+  display: block;
+  height: 2.5em;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 40; }
+
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
 /* Carousel base class */
