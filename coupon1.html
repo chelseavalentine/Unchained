@@ -2,29 +2,221 @@
 A detailed view of a coupon
 -->
 <!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
 
-	<!-- Optional theme -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous">
+        <!--<link rel="stylesheet" type="text/css" href="res/styles/material-bootstrap.css">-->
+        <!--<script type="text/javascript" src="res/scripts/material-bootstrap.min.js"></script>-->
 
-	<!-- Latest compiled and minified JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+
+        <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+        <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+
+    <link href="https://cdn.rawgit.com/band-x-media/SASS-Material-Design-for-Bootstrap/master/dist/material-bootstrap.min.css" rel="stylesheet">
+
+    <script type="text/javascript"
+    src="https://cdn.rawgit.com/band-x-media/SASS-Material-Design-for-Bootstrap/master/dist/material-bootstrap.min.js"></script>
+
+
+    <script src="res/scripts/map.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAbD4DRMpWG4WEMKU4VVeyLEPWV_DBLvKY&callback=initMap" async defer
+            type="text/javascript"></script>
+
+    <script>
+        $(document).ready(function () {
+
+            var overlay = $('.sidebar-overlay');
+
+            $('body').removeAttr('style');
+
+            $('.sidebar-toggle').on('click', function () {
+                var sidebar = $('#sidebar');
+                sidebar.toggleClass('open');
+                if ((sidebar.hasClass('sidebar-fixed-left') || sidebar.hasClass('sidebar-fixed-right')) && sidebar.hasClass('open')) {
+                    overlay.addClass('active');
+                } else {
+                    overlay.removeClass('active');
+                }
+            });
+
+            overlay.on('click', function () {
+                $(this).removeClass('active');
+                $('#sidebar').removeClass('open');
+            });
+
+            $("#maps").hide();
+
+            $("#home-tab").click(function(){
+                $("#maps").hide();
+                $("#home").show();
+            });
+            $("#maps-tab").click(function(){
+                $("#maps").show();
+                $("#home").hide();
+                google.maps.event.trigger(map, 'resize');
+            });
+
+        });
+
+
+        (function ($) {
+
+            var dropdown = $('.sidebar .dropdown');
+
+//	Add slidedown animation to dropdown
+            dropdown.on('show.bs.dropdown', function (e) {
+                $(this).find('.dropdown-menu').first().stop(true, true).slideDown();
+            });
+
+//	Add slideup animation to dropdown
+            dropdown.on('hide.bs.dropdown', function (e) {
+                $(this).find('.dropdown-menu').first().stop(true, true).slideUp();
+            });
+
+        })(jQuery);
+    </script>
+
+    <style>
+        #map {
+            height: 500px;
+            width: 500px;
+        }
+
+        .breather-sml{
+            height:5px;
+        }
+
+        body {
+            padding-top: 112px;
+        }
+    </style>
+
+    <title></title>
+
+
+    <script>
+        $(document).ready(function () {
+
+            var overlay = $('.sidebar-overlay');
+
+            $('.sidebar-toggle').on('click', function () {
+                var sidebar = $('#sidebar');
+                sidebar.toggleClass('open');
+                if ((sidebar.hasClass('sidebar-fixed-left') || sidebar.hasClass('sidebar-fixed-right')) && sidebar.hasClass('open')) {
+                    overlay.addClass('active');
+                } else {
+                    overlay.removeClass('active');
+                }
+            });
+
+            overlay.on('click', function () {
+                $(this).removeClass('active');
+                $('#sidebar').removeClass('open');
+            });
+
+            $("#maps").hide();
+
+            $("#home-tab").click(function(){
+                $("#maps").hide();
+                $("#home").show();
+            });
+            $("#maps-tab").click(function(){
+                $("#maps").show();
+                $("#home").hide();
+            });
+
+        });
+
+
+        (function ($) {
+
+            var dropdown = $('.sidebar .dropdown');
+
+//	Add slidedown animation to dropdown
+            dropdown.on('show.bs.dropdown', function (e) {
+                $(this).find('.dropdown-menu').first().stop(true, true).slideDown();
+            });
+
+//	Add slideup animation to dropdown
+            dropdown.on('hide.bs.dropdown', function (e) {
+                $(this).find('.dropdown-menu').first().stop(true, true).slideUp();
+            });
+
+        })(jQuery);
+    </script>
+
+
+    <style>
+        #map {
+            height: 500px;
+            width: 500px;
+        }
+
+        .breather-sml{
+            height:5px;
+        }
+
+        body {
+            padding-top: 112px;
+        }
+    </style>
+
+    <title></title>
+
 </head>
-<body>
-	<nav>
-		<img src="res/images/hamburger.svg">
-		Unchained
-	</nav>
 
-	<div id="sidebar">
-		Profile
-		Preferences
-		History
-	</div>
+<body>
+
+<style type='text/css'>
+    body {padding-top: 112px;}
+</style>
+<div class="navigation-drawer-overlay"></div>
+
+<nav class="app-bar  app-bar-has-tabs  elevated-1 app-bar-static app-bar-translucent bg-cyan">
+
+
+    <a class="navigation-drawer-toggle" href="#">
+
+        <i class="icon icon-lg material-icons text-white">menu</i>
+
+    </a>
+
+    <h1 class="title">
+
+		<span class="hidden-sm hidden-xs">
+				components <span class="divider">❯</span>
+		</span>
+
+        Unchained
+
+    </h1>
+
+    <div class="container">
+
+        <div class="row">
+            <!--nav-justified-->
+            <ul class="nav nav-tabs  nav-tab-yellow" role="tablist">
+                <li role="presentation" class="active"><a  id="home-tab" class="border-green" href="#" aria-controls="home"
+                                                          role="tab" data-toggle="tab" aria-expanded="true"><i class="icon material-icons">home</i></a>
+                </li>
+                <li role="presentation" class=""><a id="maps-tab" href="#" aria-controls="profile" role="tab" data-toggle="tab"
+                                                    aria-expanded="false">Tab 2</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<div class="content-container">
+    <div class="container">
+        <div id="maps" class="row">
+            <div id="map"></div>
+            <button>
+        </div>
+    </div>
+</div>
 
 	<main>
 		<!--Map view-->
@@ -50,6 +242,10 @@ A detailed view of a coupon
 			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 		</section>
 	</main>
-	<script src="./res/scripts/main.js"></script>
+
+<script type="text/javascript" src="https://cdn.rawgit.com/Prinzhorn/skrollr/master/dist/skrollr.min.js"></script>
+<!--<script type="text/javascript"-->
+        <!--src="https://raw.githubusercontent.com/liabru/jquery-match-height/master/jquery.matchHeight-min.js"></script>-->
 </body>
 </html>
+
