@@ -2,96 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-
+    <title>Halal Guys | Unchained</title>
     <link rel="stylesheet" type="text/css" href="res/styles/material-bootstrap.css">
+    <link rel="stylesheet" href="./res/styles/coupon.css">
 
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-
     <script type="text/javascript" src="https://cdn.rawgit.com/band-x-media/SASS-Material-Design-for-Bootstrap/master/dist/material-bootstrap.min.js"></script>
-
-    <script src="res/scripts/map.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAbD4DRMpWG4WEMKU4VVeyLEPWV_DBLvKY&callback=initMap" async defer type="text/javascript"></script>
-    <script>
-        $(document).ready(function () {
-            var overlay = $('.sidebar-overlay');
-
-            $('body').removeAttr('style');
-
-            $('.sidebar-toggle').on('click', function () {
-                var sidebar = $('#sidebar');
-                sidebar.toggleClass('open');
-                if ((sidebar.hasClass('sidebar-fixed-left') || sidebar.hasClass('sidebar-fixed-right')) && sidebar.hasClass('open')) {
-                    overlay.addClass('active');
-                } else {
-                    overlay.removeClass('active');
-                }
-            });
-
-            overlay.on('click', function () {
-                $(this).removeClass('active');
-                $('#sidebar').removeClass('open');
-            });
-
-            $("#home-tab").click(function(){
-                $("#maps").hide();
-                $("#home").show();
-            });
-            $("#maps-tab").click(function(){
-                $("#maps").show();
-                $("#home").hide();
-                google.maps.event.trigger(map, 'resize');
-            });
-        });
-
-
-        (function ($) {
-            var dropdown = $('.sidebar .dropdown');
-
-            //	Add slidedown animation to dropdown
-            dropdown.on('show.bs.dropdown', function (e) {
-                $(this).find('.dropdown-menu').first().stop(true, true).slideDown();
-            });
-
-            //	Add slideup animation to dropdown
-            dropdown.on('hide.bs.dropdown', function (e) {
-                $(this).find('.dropdown-menu').first().stop(true, true).slideUp();
-            });
-
-            var back = document.getElementsByClassName('backButton')[0];
-            back.addEventListener('click', function() {
-                window.history.back();
-            })
-
-        })(jQuery);
-    </script>
-
-    <style>
-        #map {
-            margin-top: 2em;
-            width: 100%;
-            height: 150px;
-        }
-
-        .breather-sml{
-            height:5px;
-        }
-
-        .coupon {
-            border: 2px dashed #202020;
-            background-color: rgba(255, 255, 255, .92);
-        }
-
-        body {
-            padding-top: 112px;
-        }
-        .diamond {
-            width: 2.5em;
-        }
-    </style>
-
-    <title>Halal Guys | Unchained</title>
-
+    <script src="res/scripts/map.js"></script>
+    <script src="res/scripts/coupon.js" defer></script>
 </head>
 
 <body>
@@ -103,9 +23,6 @@
     </a>
 
     <a class="btn btn-fab btn-md bg-orange">
-        <!--<i class="icon mdi-content-add"></i>-->
-        <!--<i class="mdi-content-add"></i>-->
-        <!--<i class="glyphicon glyphicon-ok"></i>-->
         <span class="glyphicon glyphicon-ok"></span>
     </a>
 
@@ -121,9 +38,9 @@
                     <div class="item active">
                         <img src="res/images/food/halal.jpg" alt="" class="img-responsive">
                         <div class="carousel-caption">
-                            <h1>Brunch</h1>
+                            <h1>Free Falafel</h1>
                             <div class="paper elevated-1 coupon">
-                                <p>Free Falafel with any Gyro, for $10 total!</p>
+                                <p>Free Falafel with any Gyro, for a $10 total!</p>
                                 <strong>
                                     <h1 style="color: #202020">COUPON-5</h1>
                                 </strong>
@@ -152,6 +69,7 @@
     </div>
 </div>
 <script type="text/javascript" src="https://cdn.rawgit.com/Prinzhorn/skrollr/master/dist/skrollr.min.js"></script>
+
 <!--<script type="text/javascript"-->
         <!--src="https://raw.githubusercontent.com/liabru/jquery-match-height/master/jquery.matchHeight-min.js"></script>-->
 </body>
