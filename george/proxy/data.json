@@ -12,6 +12,12 @@
 	"HiddenGem": true
 	},
 	{
+	"CleansedMerchantName": "Anejo Tribeca",
+	"CleansedMerchantStreetAddress": "301 Church St",
+	"CleansedMerchantTelephoneNumber": "(212) 920-6270",
+	"HiddenGem": false
+	},
+	{
 	"CleansedMerchantName": "Artisanal Desserts",
 	"CleansedMerchantStreetAddress": "126 Mulberry St",
 	"CleansedMerchantTelephoneNumber": "(480) 292-5100",
