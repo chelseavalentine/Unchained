@@ -65,12 +65,12 @@ A detailed view of a coupon
 
             var dropdown = $('.sidebar .dropdown');
 
-//	Add slidedown animation to dropdown
+			//	Add slidedown animation to dropdown
             dropdown.on('show.bs.dropdown', function (e) {
                 $(this).find('.dropdown-menu').first().stop(true, true).slideDown();
             });
 
-//	Add slideup animation to dropdown
+			//	Add slideup animation to dropdown
             dropdown.on('hide.bs.dropdown', function (e) {
                 $(this).find('.dropdown-menu').first().stop(true, true).slideUp();
             });
@@ -94,93 +94,18 @@ A detailed view of a coupon
     </style>
 
     <title></title>
-
-
-    <script>
-        $(document).ready(function () {
-
-            var overlay = $('.sidebar-overlay');
-
-            $('.sidebar-toggle').on('click', function () {
-                var sidebar = $('#sidebar');
-                sidebar.toggleClass('open');
-                if ((sidebar.hasClass('sidebar-fixed-left') || sidebar.hasClass('sidebar-fixed-right')) && sidebar.hasClass('open')) {
-                    overlay.addClass('active');
-                } else {
-                    overlay.removeClass('active');
-                }
-            });
-
-            overlay.on('click', function () {
-                $(this).removeClass('active');
-                $('#sidebar').removeClass('open');
-            });
-
-            $("#maps").hide();
-
-            $("#home-tab").click(function(){
-                $("#maps").hide();
-                $("#home").show();
-            });
-            $("#maps-tab").click(function(){
-                $("#maps").show();
-                $("#home").hide();
-            });
-
-        });
-
-
-        (function ($) {
-
-            var dropdown = $('.sidebar .dropdown');
-
-//	Add slidedown animation to dropdown
-            dropdown.on('show.bs.dropdown', function (e) {
-                $(this).find('.dropdown-menu').first().stop(true, true).slideDown();
-            });
-
-//	Add slideup animation to dropdown
-            dropdown.on('hide.bs.dropdown', function (e) {
-                $(this).find('.dropdown-menu').first().stop(true, true).slideUp();
-            });
-
-        })(jQuery);
-    </script>
-
-
-    <style>
-        #map {
-            height: 500px;
-            width: 500px;
-        }
-
-        .breather-sml{
-            height:5px;
-        }
-
-        body {
-            padding-top: 112px;
-        }
-    </style>
-
-    <title></title>
+	<style type='text/css'>
+	    body {padding-top: 112px;}
+	</style>
 
 </head>
 
 <body>
 
-<style type='text/css'>
-    body {padding-top: 112px;}
-</style>
 <div class="navigation-drawer-overlay"></div>
-
 <nav class="app-bar  app-bar-has-tabs  elevated-1 app-bar-static app-bar-translucent bg-cyan">
-
-
     <a class="navigation-drawer-toggle" href="#">
-
         <i class="icon icon-lg material-icons text-white">menu</i>
-
     </a>
 
     <h1 class="title">
