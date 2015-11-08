@@ -11,7 +11,7 @@
 
     <script type="text/javascript" src="https://cdn.rawgit.com/band-x-media/SASS-Material-Design-for-Bootstrap/master/dist/material-bootstrap.min.js"></script>
 
-    <script src="res/scripts/map.js"></script>
+    <script src="./res/scripts/map.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAbD4DRMpWG4WEMKU4VVeyLEPWV_DBLvKY&callback=initMap" async defer type="text/javascript"></script>
     <script>
         $(document).ready(function () {
@@ -81,29 +81,10 @@
 
     <title>Grotta Azzurra | Unchained</title>
     <style>
-    .btn-twitter {
-    background: #00acee;
-    border-radius: 0;
-    color: #fff;
-    }
-    .btn-twitter:link, .btn-twitter:visited {
-        color: #fff;
-    }
-    .btn-twitter:active, .btn-twitter:hover {
-        background: #0087bd;
-        color: #fff;
-    }
-    .btn-facebook {
-        background: #3b5998;
-        border-radius: 0;
-        color: #fff;
-    }
-    .btn-facebook:link, .btn-facebook:visited {
-        color: #fff;
-    }
-    .btn-facebook:active, .btn-facebook:hover {
-        background: #30477a;
-        color: #fff;
+    
+
+    #rateStar {
+        width: 24px;
     }
     </style>
 </head>
@@ -168,7 +149,9 @@
         <div class="row">
             <div class="card paper">
                 <div class="title">
-                    Grotta Azzurra<br>
+                    Grotta Azzurra
+                    <img id="rateStar" src="./res/images/unfilled-star.svg">
+                    <br>
                     <small>177 Mulberry St, New York, NY 10013</small><br>
                     <small class="phone">(212) 925-8775</small>
                 </div>
@@ -194,10 +177,25 @@
 <!--<script type="text/javascript"-->
         <!--src="https://raw.githubusercontent.com/liabru/jquery-match-height/master/jquery.matchHeight-min.js"></script>-->
     <script>
-        var back = document.getElementsByClassName("backButton")[0];
-        back.addEventListener('click', function() {
-            window.history.back();
-        });
+        var starClicked = false;
+        (function(){
+            var back = document.getElementsByClassName("backButton")[0];
+            back.addEventListener('click', function() {
+                window.history.back();
+            });
+
+            var star = document.getElementById('rateStar');
+            star.addEventListener('click', function() {
+                if (starClicked === false) {
+                    starClicked = true;
+                    star.src = "./res/images/filled-star.svg";
+                } else {
+                    starClicked = false;
+                    star.src = "./res/images/unfilled-star.svg";
+                }
+                // star.src= "./res/"
+            })
+        })();
     </script>
 </body>
 
