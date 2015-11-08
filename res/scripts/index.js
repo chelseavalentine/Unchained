@@ -11,7 +11,8 @@
 	
 	// get height of window
 	var windowHeight = window.innerHeight - signUpHeight,
-		navHeight = document.getElementsByTagName("nav")[0].offsetHeight;
+		navHeight = document.getElementsByClassName("app-bar")[0].offsetHeight;
+
 	carousel.style.height = windowHeight + "px";
 
 	// set each carousel slide to 90% window height
