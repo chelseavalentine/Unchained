@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <base href="../">
+    <link href="https://cdn.rawgit.com/band-x-media/SASS-Material-Design-for-Bootstrap/master/dist/material-bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./res/styles/signup.css">
+
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"> </script>
+    <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript"
+    src="https://cdn.rawgit.com/band-x-media/SASS-Material-Design-for-Bootstrap/master/dist/material-bootstrap.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAbD4DRMpWG4WEMKU4VVeyLEPWV_DBLvKY&callback=initMap" async defer type="text/javascript"></script>
+    <script src="./res/scripts/interests.js" defer type="text/javascript"></script>
+    <title>Unchained</title>
+</head>
+
+<body>
+	<main>
+		<img id="logo-medium" src="./res/images/logo.svg">
+	    <h3 id="title">Unchained</h3>
+	
+	    <div id="filter-holder">
+	        <div class="card paper" id="filter-modal">
+	            <div class="content">
+	            	<h1>Sign up</h1><br>
+
+	            	<form method="POST" action="/auth/register">
+                            <input type="hidden" name="_token" value="92Y6OKx9osUJ3FSuhzhfMCvRDCLhF2ifXt7QYTId">
+
+                            <div class="form-group">
+                                Name
+                                <input type="text" name="name" class="form-control" value="Unchained">
+                            </div>
+
+                            <div class="form-group">
+                                Email
+                                <input type="email" class="form-control"  name="email" value="jill@unchained.nyc">
+                            </div>
+
+                            <div class="form-group">
+                                Password
+                                <input type="password" class="form-control"  name="password" value="password">
+                            </div>
+
+                            <div class="form-group">
+                                Confirm Password
+                                <input type="password" class="form-control"  name="password_confirmation" value="password">
+                            </div>
+                        </form>
+
+	                <h3>I'm interested in...</h3><br>
+	                <div class="interest" id="interest-food" toggled="true">
+	                    <h4>Food</h4>
+	                    <div class="switch switch-pink">
+	                        <input type="checkbox" name="switch1Value" id="switch1" checked>
+	                    </div>
+	                </div>
+
+	                <div class="interest" id="interest-entertainment">
+	                    <h4>Entertainment</h4>
+	                    <div class="switch switch-cyan">
+	                        <input type="checkbox" name="switch2Value" id="switch2">
+	                    </div>
+	                </div>
+
+	                <div class="interest" id="interest-clothing">
+	                    <h4>Clothing</h4>
+	                    <div class="switch switch-orange">
+	                        <input type="checkbox" name="switch3Value" id="switch3">
+	                    </div>
+	                </div>
+	                
+	                <div class="interest" id="interest-souvenirs">
+	                    <h4>Souvenirs</h4>
+	                    <div class="switch switch-light-green">
+	                        <input type="checkbox" name="switch4Value" id="switch4">
+	                    </div>
+	                </div>
+	                
+	                <div class="interest" id="interest-surprise">
+	                    <h4>Surprise me!</h4>
+	                    <div class="switch switch-yellow">
+	                        <input type="checkbox" name="switch5Value" id="switch5">
+	                    </div>
+	                </div>
+	                <br>
+	                <div class="button-holder">
+	                    <a type="submit" role="button" class="btn btn-primary">Register</a>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	    
+	</main>
+<script type="text/javascript" src="https://cdn.rawgit.com/Prinzhorn/skrollr/master/dist/skrollr.min.js"></script>
+</body>
+</html>
