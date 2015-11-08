@@ -33,8 +33,6 @@
                 $('#sidebar').removeClass('open');
             });
 
-            $("#maps").hide();
-
             $("#home-tab").click(function(){
                 $("#maps").hide();
                 $("#home").show();
@@ -44,12 +42,9 @@
                 $("#home").hide();
                 google.maps.event.trigger(map, 'resize');
             });
-
         });
 
-
         (function ($) {
-
             var dropdown = $('.sidebar .dropdown');
 
             //	Add slidedown animation to dropdown
@@ -61,12 +56,6 @@
             dropdown.on('hide.bs.dropdown', function (e) {
                 $(this).find('.dropdown-menu').first().stop(true, true).slideUp();
             });
-
-            var back = document.getElementsByClassName('backButton')[0];
-            back.addEventListener('click', function() {
-                window.history.back();
-            })
-
         })(jQuery);
     </script>
 
@@ -85,6 +74,13 @@
             border: 2px dashed #202020;
             background-color: rgba(255, 255, 255, .92);
         }
+
+        body {
+            padding-top: 112px;
+        }
+        .diamond {
+            width: 2.5em;
+        }
     </style>
 
     <title>Grotta Azzurra | Unchained</title>
@@ -96,7 +92,7 @@
 
 <nav class="app-bar elevated-1 app-bar-static app-bar-translucent bg-cyan">
     <a class="navigation-drawer-toggle backButton" href="#">
-        <span class="glyphicon glyphicon-chevron-left"></span>
+        <span class="glyphicon glyphicon-chevron-left" backButton></span>
     </a>
 
     <a class="btn btn-fab btn-md bg-orange">
@@ -152,6 +148,12 @@
 <script type="text/javascript" src="https://cdn.rawgit.com/Prinzhorn/skrollr/master/dist/skrollr.min.js"></script>
 <!--<script type="text/javascript"-->
         <!--src="https://raw.githubusercontent.com/liabru/jquery-match-height/master/jquery.matchHeight-min.js"></script>-->
+    <script>
+        var back = document.getElementsByClassName("backButton")[0];
+        back.addEventListener('click', function() {
+            window.history.back();
+        });
+    </script>
 </body>
 
 </html>

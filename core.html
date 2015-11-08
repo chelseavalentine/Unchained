@@ -6,7 +6,6 @@
         <!--<link rel="stylesheet" type="text/css" href="res/styles/material-bootstrap.css">-->
         <!--<script type="text/javascript" src="res/scripts/material-bootstrap.min.js"></script>-->
 
-
         <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
         <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 
@@ -54,44 +53,8 @@
                 $("#home").hide();
                 google.maps.event.trigger(map, 'resize');
             });
-
         });
-
-
-        (function ($) {
-
-            var dropdown = $('.sidebar .dropdown');
-
-//	Add slidedown animation to dropdown
-            dropdown.on('show.bs.dropdown', function (e) {
-                $(this).find('.dropdown-menu').first().stop(true, true).slideDown();
-            });
-
-//	Add slideup animation to dropdown
-            dropdown.on('hide.bs.dropdown', function (e) {
-                $(this).find('.dropdown-menu').first().stop(true, true).slideUp();
-            });
-
-        })(jQuery);
     </script>
-
-    <style>
-        #map {
-            height: 100%;
-            width: 100%;
-        }
-
-        .breather-sml{
-            height:5px;
-        }
-
-        body {
-            padding-top: 112px;
-        }
-    </style>
-
-    <title></title>
-
 
     <script>
         $(document).ready(function () {
@@ -123,20 +86,18 @@
                 $("#maps").show();
                 $("#home").hide();
             });
-
         });
-
 
         (function ($) {
 
             var dropdown = $('.sidebar .dropdown');
 
-//	Add slidedown animation to dropdown
+            //	Add slidedown animation to dropdown
             dropdown.on('show.bs.dropdown', function (e) {
                 $(this).find('.dropdown-menu').first().stop(true, true).slideDown();
             });
 
-//	Add slideup animation to dropdown
+            //	Add slideup animation to dropdown
             dropdown.on('hide.bs.dropdown', function (e) {
                 $(this).find('.dropdown-menu').first().stop(true, true).slideUp();
             });

@@ -33,18 +33,16 @@
                 $('#sidebar').removeClass('open');
             });
 
-            $("#maps").hide();
-
             $("#home-tab").click(function(){
                 $("#maps").hide();
                 $("#home").show();
             });
+
             $("#maps-tab").click(function(){
                 $("#maps").show();
                 $("#home").hide();
                 google.maps.event.trigger(map, 'resize');
             });
-
         });
 
 
@@ -85,9 +83,16 @@
             border: 2px dashed #202020;
             background-color: rgba(255, 255, 255, .92);
         }
+
+        body {
+            padding-top: 112px;
+        }
+        .diamond {
+            width: 2.5em;
+        }
     </style>
 
-    <title>Grotta Azzurra | Unchained</title>
+    <title>Hudson Cafe | Unchained</title>
 
 </head>
 
@@ -96,7 +101,7 @@
 
 <nav class="app-bar elevated-1 app-bar-static app-bar-translucent bg-cyan">
     <a class="navigation-drawer-toggle backButton" href="#">
-        <span class="glyphicon glyphicon-chevron-left"></span>
+        <span class="glyphicon glyphicon-chevron-left backButton"></span>
     </a>
 
     <a class="btn btn-fab btn-md bg-orange">
@@ -106,7 +111,7 @@
         <span class="glyphicon glyphicon-ok"></span>
     </a>
 
-    <h1 class="title">Grotta Azzurra</h1>
+    <h1 class="title">Hudson Cafe</h1>
 </nav>
 
 
@@ -116,14 +121,14 @@
             <div id="mycarousel" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
                     <div class="item active">
-                        <img src="res/images/food/brunch_spread.jpg" alt="" class="img-responsive">
+                        <img src="res/images/food/coffee.jpg" alt="" class="img-responsive">
                         <div class="carousel-caption">
-                            <h1>Brunch</h1>
+                            <h1>Premium Bean Coffee</h1>
                             <!--Insert your text here !-->
                             <div class="paper elevated-1 coupon">
-                                <p>Only <s>$30</s> $25 for a hearty brunch for 2!</p>
+                                <p>Only <s>$2.50</s> $1.50 per cup of coffee!</p>
                                 <strong>
-                                    <h1 style="color: #202020">COUPON-1</h1>
+                                    <h1 style="color: #202020">COUPON-2</h1>
                                 </strong>
                             </div>
                         </div>
@@ -135,11 +140,11 @@
         <div class="row">
             <div class="card paper">
                 <div class="title">
-                    Grotta Azzurra<br>
-                    <small>177 Mulberry St; New York NY 10013</small>
+                    Hudson Cafe<br>
+                    <small>628 Hudson St, New York, NY 10014</small>
                 </div>
                 <div class="content">
-                    <p>Grotta Azzurra is a neighborhood institution with traditional Italian fare in a white tablecloth setting.</p>
+                    <p>Hudson Cafe is a homey American cafe serving breakfast pastries, innovative lunch sandwiches & hearty dinner fare.</p>
                 </div>
 
                 <div id="maps" class="row">
