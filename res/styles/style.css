@@ -1,57 +1,167 @@
-/*
-Error: File to import not found or unreadable: pages/coupon.
-       Load path: c:/Users/Chelsea/apps/unchained/res/styles
-        on line 11 of ./style.scss
+/*RESET STYLES*/
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+  background: transparent;
+  border: 0;
+  font-size: 100%;
+  font-weight: inherit;
+  font-style: normal;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+  vertical-align: baseline; }
 
-6: @import 'map';
-7: 
-8: // pages
-9: @import 'pages/index';
-10: @import 'pages/signup';
-11: @import 'pages/coupon';
+/* HTML5 RESETS FOR OLDER BROWSERS */
+article, aside, figure, figure img, hgroup, footer, header, nav, section {
+  display: block; }
 
-Backtrace:
-./style.scss:11
-c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/sass-3.4.13/lib/sass/tree/import_node.rb:66:in `rescue in import'
-c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/sass-3.4.13/lib/sass/tree/import_node.rb:45:in `import'
-c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/sass-3.4.13/lib/sass/tree/import_node.rb:28:in `imported_file'
-c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/sass-3.4.13/lib/sass/tree/import_node.rb:37:in `css_import?'
-c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:311:in `visit_import'
-c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/sass-3.4.13/lib/sass/tree/visitors/base.rb:36:in `visit'
-c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
-c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/sass-3.4.13/lib/sass/stack.rb:79:in `block in with_base'
-c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/sass-3.4.13/lib/sass/stack.rb:115:in `with_frame'
-c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/sass-3.4.13/lib/sass/stack.rb:79:in `with_base'
-c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:158:in `visit'
-c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/sass-3.4.13/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
-c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/sass-3.4.13/lib/sass/tree/visitors/base.rb:52:in `map'
-c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/sass-3.4.13/lib/sass/tree/visitors/base.rb:52:in `visit_children'
-c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
-c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
-c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
-c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/sass-3.4.13/lib/sass/tree/visitors/base.rb:36:in `block in visit'
-c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
-c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/sass-3.4.13/lib/sass/tree/visitors/base.rb:36:in `visit'
-c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:157:in `visit'
-c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:8:in `visit'
-c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/sass-3.4.13/lib/sass/tree/root_node.rb:36:in `css_tree'
-c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/sass-3.4.13/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
-c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/sass-3.4.13/lib/sass/engine.rb:368:in `_render_with_sourcemap'
-c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/sass-3.4.13/lib/sass/engine.rb:285:in `render_with_sourcemap'
-c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/sass-3.4.13/lib/sass/plugin/compiler.rb:490:in `update_stylesheet'
-c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/sass-3.4.13/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
-c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/sass-3.4.13/lib/sass/plugin/compiler.rb:209:in `each'
-c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/sass-3.4.13/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
-c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/sass-3.4.13/lib/sass/plugin/compiler.rb:470:in `on_file_changed'
-c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/sass-3.4.13/lib/sass/plugin/compiler.rb:328:in `block in watch'
-c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/listen-2.9.0/lib/listen/listener.rb:291:in `call'
-c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/listen-2.9.0/lib/listen/listener.rb:291:in `_process_changes'
-c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/listen-2.9.0/lib/listen/listener.rb:255:in `block in _wait_for_changes'
-c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/listen-2.9.0/lib/listen/listener.rb:238:in `loop'
-c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/listen-2.9.0/lib/listen/listener.rb:238:in `_wait_for_changes'
-c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/listen-2.9.0/lib/listen/listener.rb:327:in `block in _start_wait_thread'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: File to import not found or unreadable: pages/coupon.\A        Load path: c:/Users/Chelsea/apps/unchained/res/styles\A         on line 11 of ./style.scss\A \A 6: @import 'map';\A 7: \A 8: // pages\A 9: @import 'pages/index';\A 10: @import 'pages/signup';\A 11: @import 'pages/coupon';"; }
+/*ol, ul { list-style: none; }*/
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+input, select {
+  vertical-align: middle; }
+
+a img {
+  border: 0; }
+
+:focus {
+  outline: 0; }
+
+a:hover, a:active {
+  outline: none; }
+
+.profile-title {
+  display: inline-block; }
+
+h3 {
+  font-size: 3em; }
+
+h4 {
+  font-size: 2em; }
+
+#map {
+  height: 500px;
+  width: 500px; }
+
+/* CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
+/* Carousel base class */
+.carousel {
+  display: block;
+  background-color: #2196F3;
+  position: absolute;
+  height: 500px;
+  width: 100%; }
+
+.item:nth-child(0) {
+  background-color: #2196F3; }
+.item:nth-child(1) {
+  background-color: #42A5F5; }
+.item:nth-child(2) {
+  background-color: #2196F3; }
+
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+  height: 600px;
+  z-index: 10; }
+
+/* Declare heights because of positioning of img element */
+.carousel .item {
+  height: 500px; }
+
+.carousel-inner > .item > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: 500px; }
+
+/* CUSTOMIZE THE SIGN-UP FIELD
+-------------------------------------------------- */
+#sign-up {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #fff;
+  position: absolute;
+  padding: 1em;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  z-index: 40; }
+  #sign-up button {
+    color: #fff;
+    border: 0;
+    font-weight: 600;
+    font-size: 1.3em;
+    text-transform: uppercase;
+    border-radius: .5em;
+    padding: .5em 2em;
+    display: block;
+    position: relative;
+    margin: 0 auto .5em auto;
+    background-color: #0D47A1; }
+  #sign-up a {
+    font-size: .9em; }
+
+.interest {
+  display: flex;
+  margin: 0 auto;
+  width: 80%;
+  border: 1px solid #F5F5F5;
+  border-radius: .5em; }
+  .interest + .interest {
+    margin-top: .4em; }
+  .interest h4 {
+    display: inline-block;
+    padding: .5em; }
+  .interest div {
+    display: inline-block;
+    margin-left: auto;
+    margin: 1.5em .6em 1.2em auto; }
+
+#interest-food:hover, #interest-food:active, #interest-food[toggled="true"] {
+  border: 1px solid #F48FB1; }
+
+#interest-entertainment:hover, #interest-entertainment:active, #interest-entertainment[toggled="true"] {
+  border: 1px solid #4DD0E1; }
+
+#interest-clothing:hover, #interest-clothing:active, #interest-clothing[toggled="true"] {
+  border: 1px solid #FFA726; }
+
+#interest-souvenirs:hover, #interest-souvenirs:active, #interest-souvenirs[toggled="true"] {
+  border: 1px solid #9CCC65; }
+
+#interest-surprise:hover, #interest-surprise:active, #interest-surprise[toggled="true"] {
+  border: 1px solid #FFEB3B; }
+
+.switch h4 {
+  display: inline-block; }
+
+.card {
+  position: relative;
+  width: 80%;
+  margin: 0 auto; }
+
+#filter-interest {
+  position: relative;
+  margin-left: auto; }
+
+/*# sourceMappingURL=style.css.map */
