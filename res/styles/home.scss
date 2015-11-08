@@ -1,0 +1,65 @@
+@import 'color';
+
+body {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-color: $cyan500;
+}
+
+main {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	position: relative;
+	width: 95%;
+	height: 100%;
+	min-height: 600px;
+	margin: 0 auto;
+}
+
+#logo {
+	width: 30%;
+	opacity: .7;
+}
+
+h1 {
+	color: $white;
+	font-size: 7em;
+	font-weight: 700;
+}
+
+h3 {
+	color: $white;
+	font-size: 3em;
+	font-weight: 400;
+	opacity: .8;
+}
+
+aside {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	position: absolute;
+	padding: 3em 0;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background-color: $white;
+
+	.btn {
+		padding: .3em 5em;
+		font-size: 1.5em;
+
+		&:link, &:visited {
+			background-color: $blue800;
+		}
+
+		&:hover, &:active {
+			background-color: $blue900;
+		}
+	}
+}
