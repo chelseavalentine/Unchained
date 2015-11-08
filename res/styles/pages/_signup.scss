@@ -1,0 +1,23 @@
+.interest {
+	display: block;
+	border: 0;
+	border-radius: .5em;
+	position: relative;
+	background: url(../images/signup-food.png);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	width: 80%;
+	// formula for width is (height * 1580)/600 b/c img is 1580px by 600px
+	height: 120px;
+
+	// create an image background w/ set opacity
+	&::after {
+		content: "";
+		
+		position: absolute;
+		z-index: -1;
+		top: 0; bottom: 0; left: 0; right: 0;
+		opacity: 1;
+	}
+}
