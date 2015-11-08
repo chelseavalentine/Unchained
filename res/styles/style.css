@@ -50,27 +50,43 @@ a:hover, a:active {
 nav {
   background-color: #212121;
   display: block;
-  height: 2.5em;
+  padding: .5em 0;
   position: absolute;
   top: 0;
   width: 100%;
   z-index: 40; }
+  nav a {
+    margin-left: 1em;
+    color: #fff;
+    font-size: 1.3em;
+    font-weight: 500;
+    text-transform: uppercase; }
 
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
 /* Carousel base class */
 .carousel {
+  display: block;
+  background-color: #2196F3;
+  position: absolute;
   height: 500px;
-  margin-bottom: 60px; }
+  width: 100%; }
+
+.item:nth-child(0) {
+  background-color: #2196F3; }
+.item:nth-child(1) {
+  background-color: #42A5F5; }
+.item:nth-child(2) {
+  background-color: #2196F3; }
 
 /* Since positioning the image, we need to help out the caption */
 .carousel-caption {
+  height: 600px;
   z-index: 10; }
 
 /* Declare heights because of positioning of img element */
 .carousel .item {
-  height: 500px;
-  background-color: #777; }
+  height: 500px; }
 
 .carousel-inner > .item > img {
   position: absolute;
@@ -78,5 +94,33 @@ nav {
   left: 0;
   min-width: 100%;
   height: 500px; }
+
+/* CUSTOMIZE THE SIGN-UP FIELD
+-------------------------------------------------- */
+#sign-up {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #fff;
+  position: absolute;
+  padding: 1em;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  z-index: 40; }
+  #sign-up button {
+    color: #fff;
+    border: 0;
+    font-weight: 600;
+    font-size: 1.3em;
+    text-transform: uppercase;
+    border-radius: .5em;
+    padding: .5em 2em;
+    display: block;
+    position: relative;
+    margin: 0 auto .5em auto;
+    background-color: #0D47A1; }
+  #sign-up a {
+    font-size: .9em; }
 
 /*# sourceMappingURL=style.css.map */

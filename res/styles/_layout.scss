@@ -1,11 +1,18 @@
 // Header
-
 nav {
 	background-color: $grey900;
 	display: block;
-	height: 2.5em;
+	padding: .5em 0;
 	position: absolute;
 	top: 0;
 	width: 100%;
 	z-index: 40;
+
+	a {
+		margin-left: 1em;
+		color: $white;
+		font-size: 1.3em;
+		font-weight: 500;
+		text-transform: uppercase;
+	}
 }
