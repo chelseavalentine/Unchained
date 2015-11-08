@@ -62,6 +62,11 @@
                 $(this).find('.dropdown-menu').first().stop(true, true).slideUp();
             });
 
+            var back = document.getElementsByClassName('backButton')[0];
+            back.addEventListener('click', function() {
+                window.history.back();
+            })
+
         })(jQuery);
     </script>
 
@@ -82,20 +87,16 @@
         }
     </style>
 
-    <title></title>
+    <title>Grotta Azzurra | Unchained</title>
 
 </head>
 
 <body>
 <div class="navigation-drawer-overlay"></div>
 
-<!--<nav class="app-bar  elevated-1 app-bar-static app-bar-translucent bg-cyan">-->
 <nav class="app-bar elevated-1 app-bar-static app-bar-translucent bg-cyan">
-
-    <a class="navigation-drawer-toggle" href="#">
-
+    <a class="navigation-drawer-toggle backButton" href="#">
         <span class="glyphicon glyphicon-chevron-left"></span>
-
     </a>
 
     <a class="btn btn-fab btn-md bg-orange">
@@ -105,12 +106,7 @@
         <span class="glyphicon glyphicon-ok"></span>
     </a>
 
-    <h1 class="title">
-		<span class="hidden-sm hidden-xs">
-				components <span class="divider">❯</span>
-		</span>
-        Unchained
-    </h1>
+    <h1 class="title">Grotta Azzurra</h1>
 </nav>
 
 
@@ -125,8 +121,9 @@
                             <h1>Brunch</h1>
                             <!--Insert your text here !-->
                             <div class="paper elevated-1 coupon">
+                                <p>Only <s>$30</s> $25 for a hearty brunch for 2!</p>
                                 <strong>
-                                    <h1 style="color: #00BCD4">COUPON-1</h1>
+                                    <h1 style="color: #202020">COUPON-1</h1>
                                 </strong>
                             </div>
                         </div>
@@ -138,8 +135,8 @@
         <div class="row">
             <div class="card paper">
                 <div class="title">
-                    Vendor detail<br>
-                    <small>123 E 4th Street; New York NY 10008</small>
+                    Grotta Azzurra<br>
+                    <small>177 Mulberry St; New York NY 10013</small>
                 </div>
                 <div class="content">
                     <p>Grotta Azzurra is a neighborhood institution with traditional Italian fare in a white tablecloth setting.</p>
@@ -152,7 +149,7 @@
         </div>
     </div>
 </div>
-<!--<script type="text/javascript" src="https://cdn.rawgit.com/Prinzhorn/skrollr/master/dist/skrollr.min.js"></script>-->
+<script type="text/javascript" src="https://cdn.rawgit.com/Prinzhorn/skrollr/master/dist/skrollr.min.js"></script>
 <!--<script type="text/javascript"-->
         <!--src="https://raw.githubusercontent.com/liabru/jquery-match-height/master/jquery.matchHeight-min.js"></script>-->
 </body>
