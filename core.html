@@ -50,6 +50,7 @@
             $("#maps-tab").click(function(){
                 $("#maps").show();
                 $("#home").hide();
+                google.maps.event.trigger(map, 'resize');
             });
 
         });
@@ -376,7 +377,7 @@
                         </div>
                     </div>
                 </div>
-            </div> 
+            </div>
 
             <div class="breather-sml"></div>
 
