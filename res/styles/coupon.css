@@ -13,4 +13,24 @@
 .breather-sml {
   height: 5px; }
 
+.coupon-top {
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+  position: absolute;
+  padding: .5em;
+  font-size: 1;
+  right: 5px;
+  top: 5px;
+  text-align: right; }
+
+.coupon-top span {
+  padding-left: .8em; }
+
+.coupon-bottom {
+  background-color: rgba(0, 0, 0, 0.4);
+  position: relative;
+  width: 100%;
+  padding: 1em;
+  font-size: 1.2em; }
+
 /*# sourceMappingURL=coupon.css.map */
