@@ -1,3 +1,6 @@
+body {
+  margin-top: -60px; }
+
 .coupon {
   border: 2px dashed #202020;
   background-color: rgba(255, 255, 255, 0.92); }
@@ -32,6 +35,12 @@
   width: 100%;
   padding: 1em;
   font-size: 1.2em; }
+
+#coupon-id {
+  color: #212121; }
+
+#rateStar {
+  width: 24px; }
 
 .shareButtons {
   display: flex; }

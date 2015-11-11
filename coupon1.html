@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>Grotta Azzurra | Unchained</title>
 
     <link rel="stylesheet" type="text/css" href="res/styles/material-bootstrap.css">
     <link rel="stylesheet" href="./res/styles/coupon.css">
@@ -9,84 +10,15 @@
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"> </script>
     <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 
-    <script type="text/javascript" src="https://cdn.rawgit.com/band-x-media/SASS-Material-Design-for-Bootstrap/master/dist/material-bootstrap.min.js"></script>
-
+    <script src="./res/scripts/navbar.js"></script>
     <script src="./res/scripts/map.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAbD4DRMpWG4WEMKU4VVeyLEPWV_DBLvKY&callback=initMap" async defer type="text/javascript"></script>
-    <script>
-        $(document).ready(function () {
-
-            //sbpb_N2RhNTRlMmEtYTViYy00YTQ2LTk5MTEtOTFlYTNiYWFmMDQ3
-
-            var overlay = $('.sidebar-overlay');
-
-            var checkout = false;
-            $('#checkout-button').on('click', function() {
-
-                if(checkout === false){
-                    $(this).removeClass('bg-orange').addClass('btn-success');
-                    $('#checkout-button-icon').removeClass('glyphicon-ok').addClass('glyphicon-usd');
-                    $('#coupon-id').append(" RESERVED").addClass('text-success');
-                    $('#coupon-caption-container').fadeTo( "slow", 0.6 );
-
-                    checkout = true;
-                }
-                else {
-
-                }
-            });
-
-            $('body').removeAttr('style');
-
-            $('.sidebar-toggle').on('click', function () {
-                var sidebar = $('#sidebar');
-                sidebar.toggleClass('open');
-                if ((sidebar.hasClass('sidebar-fixed-left') || sidebar.hasClass('sidebar-fixed-right')) && sidebar.hasClass('open')) {
-                    overlay.addClass('active');
-                } else {
-                    overlay.removeClass('active');
-                }
-            });
-
-            overlay.on('click', function () {
-                $(this).removeClass('active');
-                $('#sidebar').removeClass('open');
-            });
-
-            $("#home-tab").click(function(){
-                $("#maps").hide();
-                $("#home").show();
-            });
-            $("#maps-tab").click(function(){
-                $("#maps").show();
-                $("#home").hide();
-                google.maps.event.trigger(map, 'resize');
-            });
-        });
-
-        (function ($) {
-            var dropdown = $('.sidebar .dropdown');
-
-            //	Add slidedown animation to dropdown
-            dropdown.on('show.bs.dropdown', function (e) {
-                $(this).find('.dropdown-menu').first().stop(true, true).slideDown();
-            });
-
-            //	Add slideup animation to dropdown
-            dropdown.on('hide.bs.dropdown', function (e) {
-                $(this).find('.dropdown-menu').first().stop(true, true).slideUp();
-            });
-        })(jQuery);
-    </script>
-
-    <title>Grotta Azzurra | Unchained</title>
-    <style>
+    <script src="./res/scripts/purchase.js" defer></script>
+    <script src="./res/scripts/coupon.js" defer></script>
     
-
-    #rateStar {
-        width: 24px;
-    }
-    </style>
+    <script type="text/javascript" src="https://cdn.rawgit.com/band-x-media/SASS-Material-Design-for-Bootstrap/master/dist/material-bootstrap.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAbD4DRMpWG4WEMKU4VVeyLEPWV_DBLvKY&callback=initMap" async defer type="text/javascript" defer></script>
+    <script type="text/javascript" src="https://www.simplify.com/commerce/simplify.pay.js" defer></script>
+    <script type="text/javascript" src="https://cdn.rawgit.com/Prinzhorn/skrollr/master/dist/skrollr.min.js" defer></script>
 </head>
 
 <body>
@@ -97,9 +29,6 @@
         <span class="glyphicon glyphicon-chevron-left" backButton></span>
     </a>
 
-
-    <script type="text/javascript"
-            src="https://www.simplify.com/commerce/simplify.pay.js"></script>
     <button id="checkout-button" class="btn btn-fab btn-md bg-orange"
             data-sc-key="sbpb_N2RhNTRlMmEtYTViYy00YTQ2LTk5MTEtOTFlYTNiYWFmMDQ3"
             data-name="Jasmine Green Tea"
@@ -111,18 +40,8 @@
         <span id="checkout-button-icon" class="glyphicon glyphicon-ok"></span> 
     </button>
 
-<!--    <button id="checkout-button" class="btn btn-fab btn-md bg-orange">
-        <span id="checkout-button-icon" class="glyphicon glyphicon-ok"></span>
-    </button>-->
-
-
-    <!--<i class="icon mdi-content-add"></i>-->
-    <!--<i class="mdi-content-add"></i>-->
-    <!--<i class="glyphicon glyphicon-ok"></i>-->
-
     <h1 class="title">Grotta Azzurra</h1>
 </nav>
-
 
 <div class="content-container">
     <div class="container">
@@ -133,11 +52,10 @@
                         <img src="res/images/food/brunch_spread.jpg" alt="" class="img-responsive">
                         <div id="coupon-caption-container" class="carousel-caption">
                             <h1>Brunch</h1>
-                            <!--Insert your text here !-->
                             <div class="paper elevated-1 coupon">
                                 <p>Only <s>$30</s> $25 for a hearty brunch for 2!</p>
                                 <strong>
-                                    <h1 id="coupon-id" style="color: #202020">SXFP-CHYK</h1>
+                                    <h1 id="coupon-id">SXFP-CHYK</h1>
                                 </strong>
                             </div>
                         </div>
@@ -162,41 +80,17 @@
                 <div class="row">
                     <!-- Twitter -->
                     <a href="http://twitter.com/home?status=Check out this undiscovered restaurant! http://www.bitchain.nyc" title="Share on Twitter" target="_blank" class="btn btn-twitter"><i class="fa fa-twitter"></i> Twitter</a>
+
                      <!-- Facebook -->
                     <a href="https://www.facebook.com/sharer/sharer.php?u=unchained.nyc" title="Share on Facebook" target="_blank" class="btn btn-facebook"><i class="fa fa-facebook"></i> Facebook</a>
                 </div>
                 </div>
-                <div id="maps" class="row">
+                <div class="row">
                     <div id="map"></div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<script type="text/javascript" src="https://cdn.rawgit.com/Prinzhorn/skrollr/master/dist/skrollr.min.js"></script>
-<!--<script type="text/javascript"-->
-        <!--src="https://raw.githubusercontent.com/liabru/jquery-match-height/master/jquery.matchHeight-min.js"></script>-->
-    <script>
-        var starClicked = false;
-        (function(){
-            var back = document.getElementsByClassName("backButton")[0];
-            back.addEventListener('click', function() {
-                window.history.back();
-            });
-
-            var star = document.getElementById('rateStar');
-            star.addEventListener('click', function() {
-                if (starClicked === false) {
-                    starClicked = true;
-                    star.src = "./res/images/filled-star.svg";
-                } else {
-                    starClicked = false;
-                    star.src = "./res/images/unfilled-star.svg";
-                }
-                // star.src= "./res/"
-            })
-        })();
-    </script>
 </body>
-
 </html>

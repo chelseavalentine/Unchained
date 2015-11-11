@@ -2,98 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>Anejo Tribeca | Unchained</title>
 
     <link rel="stylesheet" type="text/css" href="res/styles/material-bootstrap.css">
+    <link rel="stylesheet" href="./res/styles/coupon.css">
 
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"> </script>
     <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 
+    <script src="./res/scripts/navbar.js"></script>
+    <script src="./res/scripts/map.js"></script>
+    <script src="./res/scripts/purchase.js" defer></script>
+    <script src="./res/scripts/coupon.js" defer></script>
+    
     <script type="text/javascript" src="https://cdn.rawgit.com/band-x-media/SASS-Material-Design-for-Bootstrap/master/dist/material-bootstrap.min.js"></script>
-
-    <script src="res/scripts/map.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAbD4DRMpWG4WEMKU4VVeyLEPWV_DBLvKY&callback=initMap" async defer type="text/javascript"></script>
-    <script>
-        $(document).ready(function () {
-            var overlay = $('.sidebar-overlay');
-
-            $('body').removeAttr('style');
-
-            $('.sidebar-toggle').on('click', function () {
-                var sidebar = $('#sidebar');
-                sidebar.toggleClass('open');
-                if ((sidebar.hasClass('sidebar-fixed-left') || sidebar.hasClass('sidebar-fixed-right')) && sidebar.hasClass('open')) {
-                    overlay.addClass('active');
-                } else {
-                    overlay.removeClass('active');
-                }
-            });
-
-            overlay.on('click', function () {
-                $(this).removeClass('active');
-                $('#sidebar').removeClass('open');
-            });
-
-            $("#home-tab").click(function(){
-                $("#maps").hide();
-                $("#home").show();
-            });
-            $("#maps-tab").click(function(){
-                $("#maps").show();
-                $("#home").hide();
-                google.maps.event.trigger(map, 'resize');
-            });
-
-        });
-
-
-        (function ($) {
-
-            var dropdown = $('.sidebar .dropdown');
-
-            //	Add slidedown animation to dropdown
-            dropdown.on('show.bs.dropdown', function (e) {
-                $(this).find('.dropdown-menu').first().stop(true, true).slideDown();
-            });
-
-            //	Add slideup animation to dropdown
-            dropdown.on('hide.bs.dropdown', function (e) {
-                $(this).find('.dropdown-menu').first().stop(true, true).slideUp();
-            });
-
-            var back = document.getElementsByClassName('backButton')[0];
-            back.addEventListener('click', function() {
-                window.history.back();
-            })
-
-        })(jQuery);
-    </script>
-
-    <style>
-        #map {
-            margin-top: 2em;
-            width: 100%;
-            height: 150px;
-        }
-
-        .breather-sml{
-            height:5px;
-        }
-
-        .coupon {
-            border: 2px dashed #202020;
-            background-color: rgba(255, 255, 255, .92);
-        }
-
-        body {
-            padding-top: 112px;
-        }
-        .diamond {
-            width: 2.5em;
-        }
-    </style>
-
-    <title>Anejo Tribeca | Unchained</title>
-
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAbD4DRMpWG4WEMKU4VVeyLEPWV_DBLvKY&callback=initMap" async defer type="text/javascript" defer></script>
+    <script type="text/javascript" src="https://www.simplify.com/commerce/simplify.pay.js" defer></script>
+    <script type="text/javascript" src="https://cdn.rawgit.com/Prinzhorn/skrollr/master/dist/skrollr.min.js" defer></script>
 </head>
 
 <body>
@@ -101,16 +26,22 @@
 
 <nav class="app-bar elevated-1 app-bar-static app-bar-translucent bg-cyan">
     <a class="navigation-drawer-toggle backButton" href="#">
-        <span class="glyphicon glyphicon-chevron-left"></span>
+        <span class="glyphicon glyphicon-chevron-left" backButton></span>
     </a>
 
-    <a class="btn btn-fab btn-md bg-orange">
-        <span class="glyphicon glyphicon-ok"></span>
-    </a>
+    <button id="checkout-button" class="btn btn-fab btn-md bg-orange"
+            data-sc-key="sbpb_N2RhNTRlMmEtYTViYy00YTQ2LTk5MTEtOTFlYTNiYWFmMDQ3"
+            data-name="Jasmine Green Tea"
+            data-description="Smooth tea with a rich jasmine bouquet"
+            data-reference="99999"
+            data-amount="3000"
+            data-color="#12B830"
+            data-redirect-url="/coupons">
+        <span id="checkout-button-icon" class="glyphicon glyphicon-ok"></span> 
+    </button>
 
     <h1 class="title">Anejo Tribeca</h1>
 </nav>
-
 
 <div class="content-container">
     <div class="container">
@@ -119,13 +50,12 @@
                 <div class="carousel-inner">
                     <div class="item active">
                         <img src="res/images/food/roasted_pork_and_scrambled_egg_burrito_with_some_red_pepper_salsa.jpg" alt="" class="img-responsive">
-                        <div class="carousel-caption">
+                        <div class="carousel-caption" id="coupon-caption-container">
                             <h1>Fiesta Grand Burrito</h1>
-                            <!--Insert your text here !-->
                             <div class="paper elevated-1 coupon">
                                 <p>Enjoy a <s>$12</s> $10 Burrito with Fresh Garden Tomatoes</p>
                                 <strong>
-                                    <h1 style="color: #202020">QK6A-JI6S</h1>
+                                    <h1 id="coupon-id">QK6A-JI6S</h1>
                                 </strong>
                             </div>
                         </div>
@@ -137,23 +67,30 @@
         <div class="row">
             <div class="card paper">
                 <div class="title">
-                    Anejo Tribeca<br>
-                    <small>301 Church St, New York, NY 10013</small>
+                    Anejo Tribeca
+                    <img id="rateStar" src="./res/images/unfilled-star.svg">
+                    <br>
+                    <small>301 Church St, New York, NY 10013</small><br>
+                    <small class="phone">(212) 925-8775</small>
                 </div>
                 <div class="content">
                     <p>Anejo Tribeca is an imaginative drinks list pairs with modern Mexican small plates in a rustic-chic space.</p>
                 </div>
+                <div class="shareButtons">
+                    <div class="row">
+                        <!-- Twitter -->
+                        <a href="http://twitter.com/home?status=Check out this undiscovered restaurant! http://www.bitchain.nyc" title="Share on Twitter" target="_blank" class="btn btn-twitter"><i class="fa fa-twitter"></i> Twitter</a>
 
-                <div id="maps" class="row">
+                         <!-- Facebook -->
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=unchained.nyc" title="Share on Facebook" target="_blank" class="btn btn-facebook"><i class="fa fa-facebook"></i> Facebook</a>
+                    </div>
+                </div>
+                <div class="row">
                     <div id="map"></div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<script type="text/javascript" src="https://cdn.rawgit.com/Prinzhorn/skrollr/master/dist/skrollr.min.js"></script>
-<!--<script type="text/javascript"-->
-        <!--src="https://raw.githubusercontent.com/liabru/jquery-match-height/master/jquery.matchHeight-min.js"></script>-->
 </body>
-
 </html>

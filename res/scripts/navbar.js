@@ -18,6 +18,8 @@ $(document).ready(function () {
         $('#sidebar').removeClass('open');
     });
 
+    $("#maps").hide();
+
     $("#home-tab").click(function(){
         $("#maps").hide();
         $("#home").show();

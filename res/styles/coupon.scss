@@ -1,3 +1,7 @@
+@import 'color';
+
+body { margin-top: -60px;}
+
 .coupon {
     border: 2px dashed #202020;
     background-color: rgba(255, 255, 255, .92);
@@ -38,6 +42,14 @@
     font-size: 1.2em;
 }
 
+#coupon-id {
+    color: $grey900;
+}
+
+#rateStar {
+    width: 24px;
+}
+
 .shareButtons {
     display: flex;    
     
@@ -52,23 +64,24 @@
     background: #00acee;
     border-radius: 0;
     color: #fff;
-    }
-    .btn-twitter:link, .btn-twitter:visited {
-        color: #fff;
-    }
-    .btn-twitter:active, .btn-twitter:hover {
-        background: #0087bd;
-        color: #fff;
-    }
-    .btn-facebook {
-        background: #3b5998;
-        border-radius: 0;
-        color: #fff;
-    }
-    .btn-facebook:link, .btn-facebook:visited {
-        color: #fff;
-    }
-    .btn-facebook:active, .btn-facebook:hover {
-        background: #30477a;
-        color: #fff;
-    }
+}
+.btn-twitter:link, .btn-twitter:visited {
+    color: #fff;
+}
+.btn-twitter:active, .btn-twitter:hover {
+    background: #0087bd;
+    color: #fff;
+}
+
+.btn-facebook {
+    background: #3b5998;
+    border-radius: 0;
+    color: #fff;
+}
+.btn-facebook:link, .btn-facebook:visited {
+    color: #fff;
+}
+.btn-facebook:active, .btn-facebook:hover {
+    background: #30477a;
+    color: #fff;
+}    
