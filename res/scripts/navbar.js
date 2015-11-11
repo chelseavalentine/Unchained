@@ -18,14 +18,12 @@ $(document).ready(function () {
         $('#sidebar').removeClass('open');
     });
 
-    $("#maps").hide();
-
     $("#home-tab").click(function(){
-        $("#maps").hide();
+        $("#map").hide();
         $("#home").show();
     });
     $("#maps-tab").click(function(){
-        $("#maps").show();
+        $("#map").show();
         $("#home").hide();
         google.maps.event.trigger(map, 'resize');
     });
